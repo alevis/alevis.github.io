@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Hello World!
-tagline: Supporting tagline
+title: Google Developer Group Amherst!
+tagline: GDG Amherst
 ---
 {% include JB/setup %}
 
