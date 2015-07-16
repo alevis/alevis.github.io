@@ -38,3 +38,7 @@ The documentation website at <http://jekyllbootstrap.com> is maintained at https
 ## License
 
 [MIT](http://opensource.org/licenses/MIT)
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/alevis/alevis.github.io/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
