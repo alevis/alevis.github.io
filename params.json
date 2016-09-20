@@ -1,6 +1,0 @@
-{
-  "name": "Levis",
-  "tagline": "My page.",
-  "body": "### Welcome to My Page.\r\nHere you'll find discussions on projects I'm currently working/checking on.\r\nGithub has a lot of really cool projects that I'm just beginning to discover.\r\nI like using NLP tools, and I find machine learning very interesting.\r\n\r\n### About me\r\nNot really much to say here.\r\n\r\n### What are you working on?\r\nA quoting system at the moment. It's a pretty big project. Building locally, using flask framework, sqlite3 for data storage, html, css3, javascript/jquery. \r\nAlso working on another flask app, mulyrica. I will be using nlp libraries (app is developed using python). Writing my own API.\r\n\r\n### How can I contact you, \r\nwrite to me 0xc06cd103938bf72a\r\n\r\n",
-  "note": "Don't delete this file! It's used internally to help with page regeneration."
-}
