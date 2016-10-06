@@ -5,10 +5,22 @@
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <meta name="description" content="Levis : My page">
-
     <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
-
     <title>Levis</title>
+
+	<script type="application/ld+json">
+	{
+		"@context":"https://github.com",
+		"@type":"Blog",
+		"url":"http://alevis.github.io",
+		"contactPoint":[{
+			"@type":"ContactPoint",
+			"telephone":"5086126990",
+			"contactType":"Me"
+		}]
+	}
+	</script>
+
   </head>
 
   <body>
@@ -16,9 +28,8 @@
     <!-- HEADER -->
     <div id="header_wrap" class="outer">
         <header class="inner">
-          <h1 id="project_title">Agaba Levis</h1>
-          <h2 id="project_tagline">Page</h2>
-
+          <h1 id="project_title">Levis</h1>
+          <h2 id="project_tagline">Welcome to my github page</h2>
         </header>
     </div>
 
