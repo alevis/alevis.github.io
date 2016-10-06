@@ -10,7 +10,7 @@
 
 	<script type="application/ld+json">
 	{
-		"@context":"http://www.github.com",
+		"@context":"http://schema.org",
 		"@type":"Blog",
 		"name":"Github Page",
 		"author":"Levis Agaba",
