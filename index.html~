@@ -12,6 +12,9 @@
 	{
 		"@context":"https://github.com",
 		"@type":"Blog",
+		"name":"Github Page",
+		"author":"Levis Agaba",
+		"description":"My github page",
 		"url":"http://alevis.github.io",
 		"contactPoint":[{
 			"@type":"ContactPoint",
