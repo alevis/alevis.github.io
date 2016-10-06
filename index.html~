@@ -16,8 +16,10 @@
     <!-- HEADER -->
     <div id="header_wrap" class="outer">
         <header class="inner">
-          <h1 id="project_title">Agaba Levis</h1>
-          <h2 id="project_tagline">Page</h2>
+          <a id="forkme_banner" href="https://github.com/alevis">View on GitHub</a>
+
+          <h1 id="project_title">Levis</h1>
+          <h2 id="project_tagline">My page</h2>
 
         </header>
     </div>
@@ -26,20 +28,16 @@
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
         <h3>
-<a id="welcome-to-alevis-pages" 
-		class="anchor" href="#welcome-to-alevis-pages" 
-		aria-hidden="true">
-		<span aria-hidden="true" class="octicon octicon-link"></span>
-</a> Welcome to alevis' Pages.</h3>
+<a id="welcome-to-alevis-pages" class="anchor" href="#welcome-to-alevis-pages" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Welcome to alevis' Pages.</h3>
 
 <p>Here you will find random thoughts and some documentation of projects I'm working on. 
 I've stumbled into a lot of very interesting projects here on github and I'm discovering more. 
-I'm currently learning nlp and poking around machine learning projects. </p>
+I'm especially interested in nlp and machine learning projects. </p>
 
 <h3>
 <a id="what-are-you-working-on" class="anchor" href="#what-are-you-working-on" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>What are you working on?</h3>
 
-<p>I'm currently working on a quote system app using the flaskr framework, sqlite3 for data storage and javascript/jquery with html/css. Can't say anything else beyond that except that I'm also using bootstrap and fontawesome. I'm also working on another flaskr app , mulyrica which actually will use nlp packages (written in python) and javascript/jquery. I'm developing my own javascript API to use with the app.</p>
+<p>I'm currently working on a quote system app using the flaskr framework, sqlite3 for data storage and javascript/jquery with html/css. Can't say anything else beyond that except that I'm also using bootstrap and fontawesome. I'm also working on another flaskr app , mulyrica which actually will use nlp packages (written in python) and javascript/jquery. I'm developing my own API to use with the app.</p>
 
 <h3>
 <a id="about-me" class="anchor" href="#about-me" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>About me.</h3>
@@ -59,5 +57,8 @@ I'm currently learning nlp and poking around machine learning projects. </p>
         <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
       </footer>
     </div>
+
+    
+
   </body>
 </html>
