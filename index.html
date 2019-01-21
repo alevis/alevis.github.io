@@ -1,94 +1,49 @@
-<!DOCTYPE html>
-<html>
+---
+layout: default
+make-smaller-titles: true
+---
 
-  <head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="description" content="Levis : My page">
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
-    <title>Levis</title>
 
-	<script type="application/ld+json">
-	{
-		"@context":"http://schema.org",
-		"@type":"Organization",
-		"name":"Github Page",
-		"author":"Levis Agaba",
-		"description":"My github page",
-		"url":"http://alevis.github.io"
-	}
-	</script>
+<div class="container-fluid index">
+    <div class="row">
 
-  </head>
+        <div class="col-md-12 main content-panel">
 
-  <body>
+            <div class="gravatar">
+                <img src="{{ site.title_image }}" class="img-circle about-image" height="150" width="150" alt="{{ site.title }}" />
+            </div>
 
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <h1 id="project_title">Levis</h1>
-          <h2 id="project_tagline">Welcome to my github page</h2>
-        </header>
+            <h1 class="header author-header" itemprop="headline">{{ site.title }}</h1>
+
+            <div class="author-text">
+                {{ site.title_description }}
+            </div>
+
+            {% include social_links.html %}
+          </div>
+          <div class="col-md-12 main content-panel">
+
+            <div class="articles">
+
+              <h2>Latest Articles</h2>
+
+              <ul>
+                  {% for post in site.posts limit: site.post_limit %}
+
+                      <li>
+                          <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+                          <small class="hidden-xs">{{ post.date | date: "%B %-d, %Y" }}</small>
+                      </li>
+
+                  {% endfor %}
+                  <li>
+                      <small><i><a href="{{ site.baseurl }}/posts/">more...</a></i></small>
+                  </li>
+              </ul>
+
+            </div>
+
+        </div>
+
     </div>
-
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">        
-        <h3>
-            <a id="welcome-to-alevis-pages" 
-    		class="anchor" href="#welcome-to-alevis-pages" 
-	        aria-hidden="true">
-		<span 
-            aria-hidden="true" class="octicon octicon-link">
-        </span>
-
-
-
-</a> My Projects.</h3>
-
-<p>Here you will find random thoughts and some documentation of projects I'm working on. 
-I've stumbled into a lot of very interesting projects here on github and I'm discovering more. 
-I'm currently learning nlp and poking around machine learning projects. </p>
-
-<h3>
-<a id="what-are-you-working-on" class="anchor" href="#what-are-you-working-on" aria-hidden="true">
-		<span aria-hidden="true" class="octicon octicon-link">
-		</span>
-</a>
-Current projects.</h3>
-
-<p>I'm currently working on a quote system app using the flaskr framework, sqlite3 for data storage and javascript/jquery with html/css. Can't say anything else beyond that except that I'm also using bootstrap and fontawesome. I'm also working on another flaskr app , mulyrica which actually will use nlp packages (written in python) and javascript/jquery. I'm developing my own javascript API to use with the app.</p>
-
-<h3>
-<a id="about-me" class="anchor" href="#about-me" aria-hidden="true">
-		<span aria-hidden="true" class="octicon octicon-link"></span>
-</a>About me.
-</h3>
-
-<p>
-	<a href="resume">Resume.</a>
-</p>
-
-<h3>
-<a id="contact" class="anchor" href="#contact" aria-hidden="true">
-	<span aria-hidden="true" class="octicon octicon-link">
-	</span>
-</a>Contact me
-</h3>
-
-<p>Write to me 0xc06cd103938bf72a</p>
-</section>
 </div>
-
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p>Published with 
-		<a href="https://pages.github.com" style="text-decoration:none;">
-			GitHub Pages
-		</a>
-		</p>
-      </footer>
-    </div>
-  </body>
-</html>
