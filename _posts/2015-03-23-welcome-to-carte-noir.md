@@ -1,9 +1,9 @@
 ---
 layout:     post
-title:      Welcome to Carte Noire
-date:       2015-03-23 15:31:19
-author:     Jacob Tomlinson
-summary:    Carte Noire is a dark blog theme for Jekyll focusing on a clear reading experience.
+title:      Welcome to My Blog
+date:       2019-03-27 15:31:19
+author:     Levis Agaba
+summary:    Welcome to my blog
 categories: jekyll
 thumbnail:  heart
 tags:
@@ -13,16 +13,16 @@ tags:
  - noire
 ---
 
-Welcome to Carte Noire.
+Welcome to my blog.
 
-Carte Noire began as a new theme for [my personal blog][1], but has now taken
-on a life of its own as a free theme for Jekyll.
+I created this blog using the carte noire dark theme for Jekyll by Jacob Tomlinson.
+Installing the theme wasn't hard but integrating my bootstrap resume was time consuming mostly because I haven't played around with Jekyl in a while.
 
-The theme has been designed with simplicity and readability in mind. It makes
-use of third party services such as Disqus ad AddThis to ensure the blog has
-all the features you would expect from a dynamic application such as Wordpress
-but with the hosting and maintenance simplicity of Jekyll.
+Initially, I had planed on hosting my resume on a seperate domain but that turned out not to be appealing to me. I wanted to have all my stuff in one place
+so I decided to include it somewhere on the blog. I had toyed with idea of blending it into the dark theme but decided against it. The two themes
+balance each other well.  So all I had to do, I thought, was just add a link to the blog's hambuger menu. It turned out to be a little more than that. 
 
-Please use/copy/share Carte Noire!
+To use the resume's assets I had to create a second 'head.html' for the resume. I named it "res-header.html". I renamed the resume's "index.html" to "resume.html" and transferred 
+all header content to "res-head.html". Likewise for "res-footer.html". I then added a link to the resume in "_includes/header.html" and created a "_layout/resume.html"  layout for the resume. "./resume.html" would be the content to this layout. I updated all the links in the resume's header, footer files as well as the resume's main file "./resume.html" and merged all the resume's assets with my blogs'. 
 
-[1]: http://www.jacobtomlinson.co.uk/
+The rest was just customizing "_includes/social_links.html" and editing the resume and adding a few things/sections. I

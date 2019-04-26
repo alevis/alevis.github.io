@@ -2,9 +2,10 @@
 title: "Levis Agaba"
 email: alevis.github.io
 description: "My blog"
+author: "Levis Agaba"
 baseurl: ""
 url: "http://alevis.github.io/"
-title_description: "My github page."
+title_description: "My personal blog."
 title_image: "https://avatars1.githubusercontent.com/u/9142438?s=460&v=4"
 google_analytics: "UA-20365477-4"
 disqus_account: cartenoire
@@ -14,14 +15,13 @@ post_limit: 5
 
 # Social usernames/URLs
 twitter_username: agabalevis
-github_username:  alevis
-instagram_username: laevs
-reddit_username:
+github_username: alevis
+fcc_username: alevis
+codepen_username: alevis
+hackerrank_username: alevis
+leetcode_username: alevis
 linkedin_link: https://www.linkedin.com/in/levis-agaba/
-google_plus_link: https://plus.google.com/discover
-stackoverflow_link:
-xing_link:
-facebook_link:
+stackoverflow_link: https://stackoverflow.com/users/11413129/levis-agaba
 
 # Footer
 footer_left: "Made with <i class=\"fa fa-heart\"></i> by <a href=\"https://twitter.com/agabalevis\">Levis Agaba</a>"
@@ -35,4 +35,4 @@ kramdown:
   syntax_highlighter: rouge
 
 permalink: pretty
-exclude: [vendor]
+# exclude: [vendor]
