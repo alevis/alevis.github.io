@@ -3,6 +3,7 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,400,300,700);
 @import url(https://fonts.googleapis.com/css?family=Montserrat);
 @import url(https://fonts.googleapis.com/css?family=Anonymous+Pro:400,700);
+@import url('https://fonts.googleapis.com/css?family=Muli|Ubuntu&display=swap');
 
 /* Colours */
 $twitter:        #6dabda;
@@ -44,7 +45,8 @@ html {
 }
 
 body {
-	font-family: 'Open Sans', sans-serif;
+	/*font-family: 'Open Sans', sans-serif;*/
+  font-family: 'Muli', sans-serif;
 	font-weight: 300;
 	background-color: $dark;
 	color: $white;
@@ -256,7 +258,8 @@ ul {
 	}
 
 	.author-header {
-		font-family: 'Montserrat', sans-serif;
+		/*font-family: 'Montserrat', sans-serif;*/
+    font-family: 'Ubuntu', sans-serif;
 		color: $light-blue;
 		margin-top: 0px;
 		padding-top: 15px;

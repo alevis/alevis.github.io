@@ -5,7 +5,7 @@ date:       2019-03-27 15:31:19
 author:     Levis Agaba
 summary:    Welcome to my blog
 categories: jekyll
-thumbnail:  heart
+thumbnail:  book
 tags:
  - welcome
  - to
@@ -25,4 +25,4 @@ balance each other well.  So all I had to do, I thought, was just add a link to 
 To use the resume's assets I had to create a second 'head.html' for the resume. I named it "res-header.html". I renamed the resume's "index.html" to "resume.html" and transferred 
 all header content to "res-head.html". Likewise for "res-footer.html". I then added a link to the resume in "_includes/header.html" and created a "_layout/resume.html"  layout for the resume. "./resume.html" would be the content to this layout. I updated all the links in the resume's header, footer files as well as the resume's main file "./resume.html" and merged all the resume's assets with my blogs'. 
 
-The rest was just customizing "_includes/social_links.html" and editing the resume and adding a few things/sections. I
+The rest was just customizing "_includes/social_links.html" and editing the resume and adding a few things/sections. 
