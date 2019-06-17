@@ -2,9 +2,9 @@
 Updated personal blog. 
 
 ## Updates
-- Fixed security issue. 
+- Upgraded some packages
 - Included link to resume.
-- Edited welcome post.
+- Added blog post.
 
 ## Usage
 Feel free to use this template.

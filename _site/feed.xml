@@ -5,8 +5,8 @@
     <description>My blog</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Thu, 25 Apr 2019 21:25:08 -0700</pubDate>
-    <lastBuildDate>Thu, 25 Apr 2019 21:25:08 -0700</lastBuildDate>
+    <pubDate>Mon, 17 Jun 2019 10:51:22 -0700</pubDate>
+    <lastBuildDate>Mon, 17 Jun 2019 10:51:22 -0700</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
     
       <item>
@@ -23,7 +23,7 @@ balance each other well.  So all I had to do, I thought, was just add a link to 
 &lt;p&gt;To use the resume’s assets I had to create a second ‘head.html’ for the resume. I named it “res-header.html”. I renamed the resume’s “index.html” to “resume.html” and transferred 
 all header content to “res-head.html”. Likewise for “res-footer.html”. I then added a link to the resume in “_includes/header.html” and created a “_layout/resume.html”  layout for the resume. “./resume.html” would be the content to this layout. I updated all the links in the resume’s header, footer files as well as the resume’s main file “./resume.html” and merged all the resume’s assets with my blogs’.&lt;/p&gt;
 
-&lt;p&gt;The rest was just customizing “_includes/social_links.html” and editing the resume and adding a few things/sections. I&lt;/p&gt;
+&lt;p&gt;The rest was just customizing “_includes/social_links.html” and editing the resume and adding a few things/sections.&lt;/p&gt;
 </description>
         <pubDate>Wed, 27 Mar 2019 08:31:19 -0700</pubDate>
         <link>http://localhost:4000/jekyll/2019/03/27/welcome-to-carte-noir/</link>

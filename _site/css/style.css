@@ -2,6 +2,7 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,400,300,700);
 @import url(https://fonts.googleapis.com/css?family=Montserrat);
 @import url(https://fonts.googleapis.com/css?family=Anonymous+Pro:400,700);
+@import url("https://fonts.googleapis.com/css?family=Muli=300|Ubuntu&display=swap");
 /* Colours */
 /* Responsive sizes */
 /* Globals */
@@ -10,7 +11,8 @@ html {
   overflow-x: hidden; }
 
 body {
-  font-family: 'Open Sans', sans-serif;
+  /*font-family: 'Open Sans', sans-serif;*/
+  font-family: 'Muli', sans-serif;
   font-weight: 300;
   background-color: #2D2D29;
   color: #FFFFFF;
@@ -154,7 +156,8 @@ ul {
   .index .content-panel:nth-of-type(1) {
     border-bottom: 10px solid #3CA2A2; }
   .index .author-header {
-    font-family: 'Montserrat', sans-serif;
+    /*font-family: 'Montserrat', sans-serif;*/
+    font-family: 'Ubuntu', sans-serif;
     color: #3CA2A2;
     margin-top: 0px;
     padding-top: 15px;
