@@ -5,10 +5,10 @@ description: "My blog"
 author: "Levis Agaba"
 baseurl: ""
 url: "http://alevis.github.io/"
-title_description: "My personal blog."
+title_description: "My blog."
 title_image: "https://avatars1.githubusercontent.com/u/9142438?s=460&v=4"
 google_analytics: "UA-139204101-1"
-disqus_account: cartenoire
+disqus_account: alevis-github-io
 github_repository: https://github.com/alevis/alevis.github.io
 addthis_id: ra-513c6fa83da6ec67
 post_limit: 5
@@ -35,4 +35,4 @@ kramdown:
   syntax_highlighter: rouge
 
 permalink: pretty
-# exclude: [vendor]
+exclude: [vendor]
