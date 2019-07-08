@@ -80,7 +80,7 @@ p.lead {
 }
 
 .dev-icons .list-inline-item i:hover {
-  color: #3ca2a2;
+  color: #BD5D38;
 }
 
 #sideNav .navbar-nav .nav-item .nav-link {
@@ -90,7 +90,7 @@ p.lead {
 }
 
 #sideNav .navbar-toggler:focus {
-  outline-color: #65c6c6;
+  outline-color: #059eac;
 }
 
 @media (min-width: 992px) {
@@ -176,11 +176,11 @@ section.resume-section .resume-item .resume-date {
 }
 
 .bg-primary {
-  background-color: #3ca2a2 !important;
+  background-color: #035a62 !important;
 }
 
 .text-primary {
-  color: #3ca2a2 !important;
+  color: #035a62 !important;
 }
 
 a {

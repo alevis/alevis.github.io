@@ -7,10 +7,10 @@
 }
 
 a {
-  color: $orange;
+  color: $uniform;
   &:hover,
   &:focus,
   &:active {
-    color: darken($orange, 15%);
+    color: darken($uniform, 15%);
   }
 }
