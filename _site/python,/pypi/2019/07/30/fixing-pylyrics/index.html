@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-139204101-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-139204101-1');  
+</script>
+    
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fixing PyLyrics</title>
+<meta name="description" content="Welcome to my little page.">
+<meta name="author" content="Levis Agaba">
+
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" media="all" href="/css/style.css" />
+<link rel="stylesheet" type="text/css" media="all" href="/css/jquery.mmenu.all.css" />
+<link rel="stylesheet" href="/css/highlightjs.piperita.css">
+
+<!-- Favicons generated at http://realfavicongenerator.net/ -->
+<link rel="apple-touch-icon" sizes="57x57" href="/favicons/apple-touch-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/favicons/apple-touch-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/favicons/apple-touch-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon-180x180.png">
+<link rel="icon" type="image/png" href="/favicons/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/favicons/android-chrome-192x192.png" sizes="192x192">
+<link rel="icon" type="image/png" href="/favicons/favicon-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="/favicons/favicon-16x16.png" sizes="16x16">
+<link rel="manifest" href="/favicons/manifest.json">
+<link rel="shortcut icon" href="/favicons/favicon.ico">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="msapplication-TileImage" content="/favicons/mstile-144x144.png">
+<meta name="msapplication-config" content="/favicons/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+
+
+<!-- Go to www.addthis.com/dashboard to customize your tools -->
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-513c6fa83da6ec67"></script>
+
+
+
+
+</head>
+
+
+    <body>
+
+    <nav id="my-menu">
+  <div>
+    <p>Levis Agaba</p>
+
+    <ul class="pages">
+      <li><a href="/"><i class="fa fa-home"></i> Home</a></li>      
+      <li><a href="/posts/"><i class="fa fa-archive"></i> All Posts</a></li>
+      <li><a href="/search/"><i class="fa fa-search"></i> Search</a></li>
+	  <li><a href="/resume/"><i class="fa fa-file-text-o"></i> Resume</li>
+    </ul>
+
+    <p class="links">
+  
+    <a href="https://www.twitter.com/agabalevis" target="_new"><i class="fa fa-twitter"></i></a>
+  
+  
+    <a href="https://github.com/alevis" target="_new"><i class="fa fa-github-alt"></i></a>
+    <a href="https://www.freecodecamp.org/alevis" target="_new"><i class="fa fa-free-code-camp"></i></a>
+    <a href="https://www.codepen.io/alevis" target="_new"><i class="fa fa-codepen"></i></a>
+    <a href="https://repl.it/@alevis" target="_new"><i class="fa fa-code"></i></a>
+  
+  <!--  -->
+  <!--  -->
+  <a href="/feed.xml" target="_new"><i class="fa fa-rss"></i></a>
+</p>
+
+  </div>
+</nav>
+<div class="menu-button" href="#menu"><i class="fa fa-bars"></i></div>
+
+
+    <div class="page-content">
+      <div class="wrap">
+      
+
+<div class="container-fluid single">
+  <div class="row">
+
+    <div itemscope itemtype="http://schema.org/Article" class="col-md-12 article">
+      
+      <div class="thumb">
+        <i class="fa fa-cogs fa-4x"></i>
+      </div>
+      
+
+      <h1 class="header" itemprop="name">Fixing PyLyrics</h1>
+
+      <div class="author">
+        <small><i>
+          
+          on <span itemprop="datePublished" content="2014-08-28">July 30, 2019</span>
+           under Python,
+        </i></small>
+      </div>
+
+      <div class="read-time">
+        <small>
+          6 minute read
+        </small>
+      </div>
+
+      <div class="content-panel content">
+
+        
+
+        <span itemprop="articleBody"><p><code class="highlighter-rouge">PyLyrics</code> is a great package for retrieving lyrics. 
+It uses <code class="highlighter-rouge">BeautifulSoup</code> to scrape the lyrics from <code class="highlighter-rouge">lyrics.fandom.com</code></p>
+
+<p><code class="highlighter-rouge">BeautifulSoup</code> or <code class="highlighter-rouge">bs4</code> provides;</p>
+
+<blockquote>
+  <p>Python idioms for iterating, searching, and modifying the parse tree.</p>
+</blockquote>
+
+<p>See <a href="https://pypi.org/project/beautifulsoup4/">here</a> for more information.</p>
+
+<h3 id="mulyrica">Mulyrica</h3>
+<p><code class="highlighter-rouge">PyLyrics</code> is a central part of <code class="highlighter-rouge">Mulyrica</code>, my lyrics search/sentiment analysis app. I was pretty disappointed when it did not work for some queries.
+I thought this was a parsing error but upon inspection, it turned out to be something else entirely.</p>
+
+<h3 id="it-works">It works!</h3>
+<p><code class="highlighter-rouge">PyLyrics</code> worked until I tested it on a few songs. 
+It returned the following error;</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ValueError: Song or Singer does not exist or the API does not have the lyrics
+</code></pre></div></div>
+
+<p>I checked the website but the lyrics were there. 
+So I opened up a debug session to investigate and find out where the error was being thrown.</p>
+
+<h4 id="source-of-the-problem">Source of the <strong>problem</strong></h4>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python">  <span class="o">@</span><span class="nb">staticmethod</span>
+  <span class="k">def</span> <span class="nf">getLyrics</span><span class="p">(</span><span class="n">singer</span><span class="p">,</span> <span class="n">song</span><span class="p">):</span>
+    <span class="c1">#Replace spaces with _
+</span>    <span class="n">singer</span> <span class="o">=</span> <span class="n">singer</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">' '</span><span class="p">,</span> <span class="s">'_'</span><span class="p">)</span>
+    <span class="n">song</span> <span class="o">=</span> <span class="n">song</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">' '</span><span class="p">,</span> <span class="s">'_'</span><span class="p">)</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'http://lyrics.wikia.com/{0}:{1}'</span><span class="o">.</span><span class="nb">format</span><span class="p">(</span><span class="n">singer</span><span class="p">,</span><span class="n">song</span><span class="p">))</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+    <span class="c1">#Get main lyrics holder
+</span>    <span class="n">lyrics</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s">"div"</span><span class="p">,{</span><span class="s">'class'</span><span class="p">:</span><span class="s">'lyricbox'</span><span class="p">})</span>
+    <span class="k">if</span> <span class="n">lyrics</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+      <span class="k">raise</span> <span class="nb">ValueError</span><span class="p">(</span><span class="s">"Song or Singer does not exist or the API does not have Lyrics"</span><span class="p">)</span>
+      <span class="k">return</span> <span class="bp">None</span>
+    <span class="c1">#Remove Scripts
+</span>    <span class="p">[</span><span class="n">s</span><span class="o">.</span><span class="n">extract</span><span class="p">()</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">lyrics</span><span class="p">(</span><span class="s">'script'</span><span class="p">)]</span>
+    <span class="c1">#Remove Comments
+</span>    <span class="n">comments</span> <span class="o">=</span> <span class="n">lyrics</span><span class="o">.</span><span class="n">findAll</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="k">lambda</span> <span class="n">text</span><span class="p">:</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">Comment</span><span class="p">))</span>
+    <span class="p">[</span><span class="n">comment</span><span class="o">.</span><span class="n">extract</span><span class="p">()</span> <span class="k">for</span> <span class="n">comment</span> <span class="ow">in</span> <span class="n">comments</span><span class="p">]</span>    
+    <span class="c1">#Remove unecessary tags
+</span>    <span class="k">for</span> <span class="n">tag</span> <span class="ow">in</span> <span class="p">[</span><span class="s">'div'</span><span class="p">,</span><span class="s">'i'</span><span class="p">,</span><span class="s">'b'</span><span class="p">,</span><span class="s">'a'</span><span class="p">]:</span>
+      <span class="k">for</span> <span class="n">match</span> <span class="ow">in</span> <span class="n">lyrics</span><span class="o">.</span><span class="n">findAll</span><span class="p">(</span><span class="n">tag</span><span class="p">):</span>
+        <span class="n">match</span><span class="o">.</span><span class="n">replaceWithChildren</span><span class="p">()</span>
+    <span class="c1">#Get output as a string and remove non unicode characters and replace &lt;br&gt; with newlines
+</span>    <span class="n">output</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">lyrics</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s">'utf-8'</span><span class="p">,</span> <span class="n">errors</span><span class="o">=</span><span class="s">'replace'</span><span class="p">)[</span><span class="mi">22</span><span class="p">:</span><span class="o">-</span><span class="mi">6</span><span class="p">:]</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s">"utf-8"</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">'</span><span class="se">\n</span><span class="s">'</span><span class="p">,</span><span class="s">''</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="s">'&lt;br/&gt;'</span><span class="p">,</span><span class="s">'</span><span class="se">\n</span><span class="s">'</span><span class="p">)</span>
+    <span class="k">try</span><span class="p">:</span>
+      <span class="k">return</span> <span class="n">output</span>
+    <span class="k">except</span><span class="p">:</span>
+      <span class="k">return</span> <span class="n">output</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s">'utf-8'</span><span class="p">)</span></code></pre></figure>
+
+<p>specifically</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python">  <span class="k">if</span> <span class="n">lyrics</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+    <span class="k">raise</span> <span class="nb">ValueError</span><span class="p">(</span><span class="s">"Song or Singer does not exist or the API does not have Lyrics"</span><span class="p">)</span>
+    <span class="k">return</span> <span class="bp">None</span></code></pre></figure>
+
+<p>I quickly did a <code class="highlighter-rouge">print lyrics</code> and sure enough they showed up in the debugging shell running in my browser
+so the problem was further down.</p>
+
+<h4 id="more-hunting">More <strong>hunting</strong></h4>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python">		<span class="n">artist</span> <span class="o">=</span> <span class="n">form</span><span class="o">.</span><span class="n">artist</span><span class="o">.</span><span class="n">data</span>
+		<span class="n">song</span> <span class="o">=</span> <span class="n">form</span><span class="o">.</span><span class="n">song</span><span class="o">.</span><span class="n">data</span>
+		<span class="n">lyrics</span> <span class="o">=</span> <span class="n">PyLyrics</span><span class="o">.</span><span class="n">getLyrics</span><span class="p">(</span><span class="n">artist</span><span class="p">,</span> <span class="n">song</span><span class="p">)</span></code></pre></figure>
+
+<p>This time I got the following error;</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python">		<span class="nb">ascii</span> <span class="n">code</span> <span class="n">can</span><span class="s">'t decode byte 0xc3 in position 1245: ordinal not in range(128) in file</span><span class="err">
+</span><span class="s">		/venv/lib/python2/site/packages/functions.py</span></code></pre></figure>
+
+<p>That was on line <code class="highlighter-rouge">96</code> in <code class="highlighter-rouge">functions.py</code> under <code class="highlighter-rouge">getLyrics(singer,song)</code></p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python">		<span class="c1">#Remove unecessary tags
+</span>		<span class="k">for</span> <span class="n">tag</span> <span class="ow">in</span> <span class="p">[</span><span class="s">'div'</span><span class="p">,</span><span class="s">'i'</span><span class="p">,</span><span class="s">'b'</span><span class="p">,</span><span class="s">'a'</span><span class="p">]:</span>
+			<span class="k">for</span> <span class="n">match</span> <span class="ow">in</span> <span class="n">lyrics</span><span class="o">.</span><span class="n">findAll</span><span class="p">(</span><span class="n">tag</span><span class="p">):</span>
+				<span class="n">match</span><span class="o">.</span><span class="n">replaceWithChildren</span><span class="p">()</span>
+		<span class="c1">#Get output as a string and remove non unicode characters and replace &lt;br&gt; with newlines
+</span>		<span class="n">output</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">lyrics</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s">'utf-8'</span><span class="p">,</span> <span class="n">errors</span><span class="o">=</span><span class="s">'replace'</span><span class="p">)[</span><span class="mi">22</span><span class="p">:</span><span class="o">-</span><span class="mi">6</span><span class="p">:]</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s">"utf-8"</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">'</span><span class="se">\n</span><span class="s">'</span><span class="p">,</span><span class="s">''</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">'&lt;br/&gt;'</span><span class="p">,</span><span class="s">'</span><span class="se">\n</span><span class="s">'</span><span class="p">)</span>
+		<span class="k">try</span><span class="p">:</span>
+			<span class="k">return</span> <span class="n">output</span>
+		<span class="k">except</span><span class="p">:</span>
+			<span class="k">return</span> <span class="n">output</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s">"utf-8"</span><span class="p">)</span></code></pre></figure>
+
+<p>I thought <code class="highlighter-rouge">encoding</code> the lyrics twice didn’t make sense so I removed call to the encoding method;</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python">		<span class="n">output</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">lyrics</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s">'utf-8'</span><span class="p">,</span> <span class="n">errors</span><span class="o">=</span><span class="s">'replace'</span><span class="p">)[</span><span class="mi">22</span><span class="p">:</span><span class="o">-</span><span class="mi">6</span><span class="p">:]</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s">"utf-8"</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">'</span><span class="se">\n</span><span class="s">'</span><span class="p">,</span><span class="s">''</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">'&lt;br/&gt;'</span><span class="p">,</span><span class="s">'</span><span class="se">\n</span><span class="s">'</span><span class="p">)</span></code></pre></figure>
+
+<p>New code;</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python">		<span class="n">output</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">lyrics</span><span class="p">)[</span><span class="mi">22</span><span class="p">:</span><span class="o">-</span><span class="mi">6</span><span class="p">:]</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s">"utf-8"</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">'</span><span class="se">\n</span><span class="s">'</span><span class="p">,</span><span class="s">''</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">'&lt;br/&gt;'</span><span class="p">,</span><span class="s">'</span><span class="se">\n</span><span class="s">'</span><span class="p">)</span></code></pre></figure>
+
+<p>Saved the script and restarted the <code class="highlighter-rouge">flask app</code> again. 
+I now had a situation were queries that had caused problems before were working and a few of 
+previously error-free queries were suddenly not working.</p>
+
+<p>Curiously, I tried running all queries under two environments, one used <code class="highlighter-rouge">python2.7</code> the other 
+used <code class="highlighter-rouge">python3.5</code>.</p>
+
+<p>It was then that I realized that this was a matter of different versions of python. 
+The package was made for and tested only on <code class="highlighter-rouge">python3+</code></p>
+
+<p>I quickly seperated what worked for <code class="highlighter-rouge">python3</code> from what workd for <code class="highlighter-rouge">python2</code> and everything finally worked.</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python">  <span class="c1">#Python 3
+</span>  <span class="k">if</span> <span class="n">sys</span><span class="o">.</span><span class="n">version_info</span><span class="o">.</span><span class="n">major</span> <span class="o">&gt;</span> <span class="mi">2</span><span class="p">:</span>
+    <span class="n">output</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">lyrics</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s">'utf-8'</span><span class="p">,</span> <span class="n">errors</span><span class="o">=</span><span class="s">'replace'</span><span class="p">)[</span><span class="mi">22</span><span class="p">:</span><span class="o">-</span><span class="mi">6</span><span class="p">:]</span><span class="o">.</span>\
+        <span class="n">decode</span><span class="p">(</span><span class="s">"utf-8"</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">'</span><span class="se">\n</span><span class="s">'</span><span class="p">,</span><span class="s">''</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">'&lt;br/&gt;'</span><span class="p">,</span><span class="s">'</span><span class="se">\n</span><span class="s">'</span><span class="p">)</span>
+  <span class="k">else</span><span class="p">:</span> <span class="c1"># Python 2
+</span>    <span class="n">output</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">lyrics</span><span class="p">)[</span><span class="mi">22</span><span class="p">:</span><span class="o">-</span><span class="mi">6</span><span class="p">:]</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s">"utf-8"</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">'</span><span class="se">\n</span><span class="s">'</span><span class="p">,</span><span class="s">''</span><span class="p">)</span><span class="o">.</span>\
+        <span class="n">replace</span><span class="p">(</span><span class="s">'&lt;br/&gt;'</span><span class="p">,</span><span class="s">'</span><span class="se">\n</span><span class="s">'</span><span class="p">)</span>
+  <span class="k">try</span><span class="p">:</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">album</span><span class="p">,</span> <span class="n">output</span><span class="p">]</span>
+  <span class="k">except</span><span class="p">:</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">album</span><span class="p">,</span> <span class="n">output</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s">'utf-8'</span><span class="p">)]</span></code></pre></figure>
+
+<p>Happy <em>pythoning</em>.</p>
+
+</span>
+
+        
+
+        
+        <div class="share">
+          <!-- Go to www.addthis.com/dashboard to customize your tools -->
+          <div class="addthis_sharing_toolbox"></div>
+        </div>
+        
+
+        
+        <div class="tags">
+          <small>
+          <i class="fa fa-tags"></i>
+            bug, error, python, package, flask
+          </small>
+        </div>
+        
+
+      </div>
+
+      
+      <div class="content-panel feedback">
+        I <i class="fa fa-heart"></i> feedback.<br />
+        Let me know what you think of this article on twitter <a href="http://www.twitter.com/agabalevis">@agabalevis</a> or leave a comment below!
+      </div>
+      
+
+      
+      <div class="content-panel comments">
+        <div id="disqus_thread">
+          <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+          <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        </div>
+      </div>
+      
+
+      
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<script type="text/javascript">
+/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+function disqus_config() { this.experiment.enable_scroll_container = true; }
+var disqus_shortname = "alevis-github-io"; // required: replace example with your forum shortname
+/* * * DON'T EDIT BELOW THIS LINE * * */
+(function() {
+  var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+
+
+      </div>
+    </div>
+
+    <div class="footer clearfix">
+  <div class="col-md-6">
+    Made with <i class="fa fa-heart"></i> by <a href="https://twitter.com/agabalevis">Levis Agaba</a>
+  </div>
+  <div class="col-md-6">
+    &lt;/&gt; on <a href="https://github.com/alevis/alevis.github.io">Github</a> &nbsp;<i class="fa fa-github-alt"></i>
+  </div>
+</div>
+
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+<script src="/js/jquery.mmenu.min.all.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.7/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<script type="text/javascript">
+   $(document).ready(function() {
+      $("#my-menu").mmenu().on( "closed.mm", function() {
+            $(".menu-button").show();
+         });
+      $(".menu-button").click(function() {
+        $(".menu-button").hide();
+        $("#my-menu").trigger("open.mm");
+      });
+   });
+</script>
+
+
+
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-139204101-1']);
+          _gaq.push(['_trackPageview']);
+  (function () {
+      var ga = document.createElement('script');
+      ga.type = 'text/javascript';
+      ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+
+    </body>
+</html>

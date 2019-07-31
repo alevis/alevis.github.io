@@ -55,14 +55,16 @@ layout: resume
             competitive software products. Looking for opportunities
             to advance and expand on my current skill set.
         </p>
-        <div class="social-icons">          
-          {% if site.linkedin_link %}<a href="{{ site.linkedin_link }}" target="_new"><i class="fab fa-linkedin"></i></a>{% endif %} 
-          {% if site.github_username %}<a href="https://github.com/{{ site.github_username }}" target="_new"><i class="fab fa-github-alt"></i></a>{% endif %}                    
-          {% if site.codepen_username %}<a href="https://www.codepen.io/{{ site.codepen_username }}" target="_new"><i class="fab fa-codepen"></i></a>{% endif %}          
-          {% if site.fcc_username %}<a href="https://www.freecodecamp.org/{{ site.fcc_username }}" target="_new"><i class="fab fa-free-code-camp"></i></a>{% endif %}
-          {% if site.leetcode_username %}<a href="https://www.leetcode.com/{{ site.leetcode_username }}" target="_new"><i class="fa fa-code"></i></a>{% endif %}          
+        <div class="social-icons">                    
           {% if site.twitter_username %}<a href="https://www.twitter.com/{{ site.twitter_username }}" target="_new"><i class="fab fa-twitter"></i></a>{% endif %}
-
+          {% if site.username %}
+            <a href="https://www.linkedin.com/in/{{ site.username }}" target="_new"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/{{ site.username }}" target="_new"><i class="fab fa-github-alt"></i></a>
+            <a href="https://www.codepen.io/{{ site.username }}" target="_new"><i class="fab fa-codepen"></i></a>
+            <a href="https://www.freecodecamp.org/{{ site.username }}" target="_new"><i class="fab fa-free-code-camp"></i></a>
+            <a href="https://repl.it/@{{ site.username }}" target="_new"><i class="fa fa-book"></i></a>
+            <a href="https://leetcode.com/{{ site.username }}" target="_new"><i class="fa fa-code"></i></a>
+            {% endif %}
         </div>
       </div>
     </section>
@@ -249,8 +251,23 @@ layout: resume
 
     <section class="resume-section p-3 p-lg-5 d-flex justify-content-center" id="projects">
         <div class="w-100">
-          <h2 class="mb-5">Projects</h2>
-  
+          <h2 class="mb-5">Portfolio</h2>
+          <!-- zulubow frontend -->
+          <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
+            <div class="resume-content">
+              <h3 class="mb-0">Zulubow</h3>
+              <div class="subheading mb-3">Zulubow frontend</div>
+              <p> 
+                Zulubow is a modern apparel and accessories store featuring traditional and 
+                modern global styles. Hats, boots, modern and traditional wear.                 
+              </p>
+              <a href="https://zbfrontend1.herokuapp.com"> 
+                <i class="fa fa-shopping-bag fa-2x" aria-hidden="true"></i>
+                Zulubow</a>                          
+            </div>            
+            <i class="fa fa-shopping-bag fa-3x" aria-hidden="true"></i>
+          </div>
+          <!--  mulyrica -->
           <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
             <div class="resume-content">
               <h3 class="mb-0">Mulyrica</h3>
@@ -264,26 +281,21 @@ layout: resume
               <a href="https://mulyrica.herokuapp.com"> 
                 <i class="fa fa-music fa-2x" aria-hidden="true"></i>
                 Mulyrica</a>                          
-            </div>
-            
+            </div>            
             <i class="fa fa-music fa-3x" aria-hidden="true"></i>
-
           </div>
-  
-       
+       <!-- Myafrica tours website -->
           <div class="resume-item d-flex flex-column flex-md-row justify-content-between">
             <div class="resume-content">
-              <h3 class="mb-0">Safarisum</h3>
-              <div class="subheading mb-3">Travel CSM website.</div>
-              <p> Safarisum helps simplify the turnaround time for travel agents or tour guides
-                 out in the field.</p>
-              <a href="https://Safarisum.herokuapp.com">
+              <h3 class="mb-0">My Africa Tours</h3>
+              <div class="subheading mb-3">Travel/Safari website.</div>
+              <p> My Africa Tours allows users to easily book full safari trips
+                  and provides access to verified local services.</p>
+              <a href="https://myafricatours.herokuapp.com/home">
                 <i class="fa fa-compass fa-2x" aria-hidden="true"></i>
-                 Safarisum</a>
-            </div>
-            
+                 My Africa Tours</a>
+            </div>            
               <i class="fa fa-compass fa-3x" aria-hidden="true"></i>
-
           </div>
 
         </div>  

@@ -1,19 +1,21 @@
 ---
 layout:     post
-title:      Carte Noire in Action
-date:       2014-06-10 12:31:19
-summary:    See what the different elements looks like.
-categories: jekyll
+title:      Fixing pylyrics getLyrics function
+date:       2019-07-30 20:10
+summary:    A small bug resulted in the wrong error.
+categories: Python, PyPI
 thumbnail: cogs
 tags:
- - demo
- - action
- - carte
- - noire
+ - bug
+ - error
+ - python
+ - package
+ - flask
 ---
 
-**Note** - This article is a derivative of ["See pixyll in action"][1], taken from the lovely jekyll theme [pixyll][4].
-
+Pylyrics is a great package for retrieving lyrics. 
+It uses `BeautifulSoup` to scrape the lyrics from `lyrics.fandom.com`
+`BeautifulSoup` or `bs4` provides "python"
 All links are easy to [locate and discern](#), yet don't detract from the harmony
 of a paragraph. The _same_ goes for italics and __bold__ elements. Even the the strikeout
 works if <del>for some reason you need to update your post</del>. For consistency's sake,

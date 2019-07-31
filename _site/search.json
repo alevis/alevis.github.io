@@ -1,19 +1,19 @@
 [
   
   {
+    "title"    : "Fixing PyLyrics",
+    "category" : "",
+    "tags"     : "bug, error, python, package, flask",
+    "url"      : "/python,/pypi/2019/07/30/fixing-pylyrics/",
+    "date"     : "2019-07-30 20:10:00 -0700"
+    } ,
+    
+  {
     "title"    : "Welcome to My Blog",
     "category" : "",
     "tags"     : "welcome, to, carte, noire",
     "url"      : "/jekyll/2019/03/27/welcome-to-carte-noir/",
     "date"     : "2019-03-27 08:31:19 -0700"
-    } ,
-    
-  {
-    "title"    : "Carte Noire in Action",
-    "category" : "",
-    "tags"     : "demo, action, carte, noire",
-    "url"      : "/jekyll/2014/06/10/carte-noire-in-action/",
-    "date"     : "2014-06-10 05:31:19 -0700"
     } ,
     
   {

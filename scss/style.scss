@@ -1,5 +1,3 @@
----
----
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,400,300,700);
 @import url(https://fonts.googleapis.com/css?family=Montserrat);
 @import url(https://fonts.googleapis.com/css?family=Anonymous+Pro:400,700);
@@ -11,7 +9,10 @@ $linkedin:       #2b77b1;
 $xing:           #006567;
 $google-plus:    #c95644;
 $facebook:       #365899;
-$github:         #f6c2a4;
+$github:         magenta;
+$free-codecamp:	 green;
+$codepen:		 orangered;
+$code:			 gold;
 $stack-overflow: #c98b3b;
 $instagram:      #cd486b;
 $reddit:         #cee3f8;
@@ -182,11 +183,18 @@ ul {
 		-moz-transition: 0.3s;
 		transition: 0.3s;
 	}
-
+	.fa-code:hover{
+		color: $code;
+	}
+	.fa-codepen:hover{
+		color: $codepen;
+	}
+	.fa-free-code-camp:hover{
+		color: $free-codecamp;
+	}
 	.fa-twitter:hover {
 		color: $twitter;
 	}
-
 	.fa-linkedin:hover {
 		color: $linkedin;
 	}
