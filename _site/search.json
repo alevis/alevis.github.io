@@ -12,24 +12,8 @@
     "title"    : "Welcome to My Blog",
     "category" : "",
     "tags"     : "welcome, to, carte, noire",
-    "url"      : "/jekyll/2019/03/27/welcome-to-carte-noir/",
+    "url"      : "/jekyll/2019/03/27/welcome-to-my-blog/",
     "date"     : "2019-03-27 08:31:19 -0700"
-    } ,
-    
-  {
-    "title"    : "So, What is Jekyll?",
-    "category" : "",
-    "tags"     : "about, jekyll",
-    "url"      : "/jekyll/2014/06/09/so-what-is-jekyll/",
-    "date"     : "2014-06-09 05:32:18 -0700"
-    } ,
-    
-  {
-    "title"    : "Using thumbnails",
-    "category" : "",
-    "tags"     : "thumbnails, carte noire",
-    "url"      : "/jekyll/2014/06/08/using-thumbnails/",
-    "date"     : "2014-06-08 05:32:18 -0700"
     } 
     
   ]

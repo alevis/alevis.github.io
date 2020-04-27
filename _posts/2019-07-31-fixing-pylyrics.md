@@ -5,6 +5,7 @@ date:       2019-07-30 20:10
 summary:    A small bug resulted in the wrong error.
 categories: Python, PyPI
 thumbnail: cogs
+published: true
 tags:
  - bug
  - error
