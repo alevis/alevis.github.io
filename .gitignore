@@ -2,3 +2,11 @@ node_modules
 Gemfile
 Gemfile.lock
 TODO.md
+/.bundle
+*.db
+vendor/log/*.log
+/tmp
+config/database.yml
+config/google-analytics.yml
+/nbproject/
+public/assets/**
