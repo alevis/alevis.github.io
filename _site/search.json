@@ -1,6 +1,14 @@
 [
   
   {
+    "title"    : "CVE-2020-14001 remediation",
+    "category" : "",
+    "tags"     : "update, kramdown, security, vulnerability, CVE-2020-14001",
+    "url"      : "/jekyll,/kramdown,/security/2020/08/16/kramdown/",
+    "date"     : "2020-08-16 00:00:00 -0700"
+    } ,
+    
+  {
     "title"    : "Fixing PyLyrics",
     "category" : "",
     "tags"     : "bug, error, python, package, flask",

@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-139204101-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-139204101-1');  
+</script>
+    
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CVE-2020-14001 remediation</title>
+<meta name="description" content="Blogging site.">
+<meta name="author" content="Agaba Levis">
+
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" media="all" href="/css/style.css" />
+<link rel="stylesheet" type="text/css" media="all" href="/css/jquery.mmenu.all.css" />
+<link rel="stylesheet" href="/css/highlightjs.piperita.css">
+
+<!-- Favicons generated at http://realfavicongenerator.net/ -->
+<link rel="apple-touch-icon" sizes="57x57" href="/favicons/apple-touch-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/favicons/apple-touch-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/favicons/apple-touch-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon-180x180.png">
+<link rel="icon" type="image/png" href="/favicons/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/favicons/android-chrome-192x192.png" sizes="192x192">
+<link rel="icon" type="image/png" href="/favicons/favicon-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="/favicons/favicon-16x16.png" sizes="16x16">
+<link rel="manifest" href="/favicons/manifest.json">
+<link rel="shortcut icon" href="/favicons/favicon.ico">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="msapplication-TileImage" content="/favicons/mstile-144x144.png">
+<meta name="msapplication-config" content="/favicons/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+
+
+<!-- Go to www.addthis.com/dashboard to customize your tools -->
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-513c6fa83da6ec67"></script>
+
+
+
+
+</head>
+
+
+    <body>
+
+    <nav id="my-menu">
+  <div>
+    <p>Agaba Levis</p>
+
+    <ul class="pages">
+      <li><a href="/"><i class="fa fa-home"></i> Home</a></li>      
+      <li><a href="/posts/"><i class="fa fa-archive"></i> All Posts</a></li>
+      <li><a href="/search/"><i class="fa fa-search"></i> Search</a></li>
+	  <!-- <li><a href="/resume/"><i class="fa fa-file-text-o"></i> Resume</li> -->
+    </ul>
+
+    <p class="links">
+  
+  
+    <a href="https://www.twitter.com/agabalevis" target="_new">
+	    <i class="fa fa-twitter"></i>
+    </a>
+  
+
+  
+    <a href="https://github.com/alevis" target="_new">
+	    <i class="fa fa-github-alt"></i>
+    </a>
+    <!-- <a href="https://www.freecodecamp.org/alevis" target="_new"><i class="fa fa-free-code-camp"></i></a> -->
+    <!-- <a href="https://www.codepen.io/alevis" target="_new"><i class="fa fa-codepen"></i></a> -->
+    <!-- <a href="https://repl.it/@alevis" target="_new"><i class="fa fa-code"></i></a> -->
+  <!--  -->
+  <!--  -->
+	<a href="https://marketplace.visualstudio.com/publishers/alevis" target="_new">
+	  	<i class="fa fa-windows"></i>
+  	</a>
+  
+</p>
+
+  </div>
+</nav>
+<div class="menu-button" href="#menu"><i class="fa fa-bars"></i></div>
+
+
+    <div class="page-content">
+      <div class="wrap">
+      
+
+<div class="container-fluid single">
+  <div class="row">
+
+    <div itemscope itemtype="http://schema.org/Article" class="col-md-12 article">
+      
+      <div class="thumb">
+        <i class="fa fa-shield fa-4x"></i>
+      </div>
+      
+
+      <h1 class="header" itemprop="name">CVE-2020-14001 remediation</h1>
+
+      <div class="author">
+        <small><i>
+          
+          on <span itemprop="datePublished" content="2014-08-28">August 16, 2020</span>
+           under Jekyll,
+        </i></small>
+      </div>
+
+      <div class="read-time">
+        <small>
+          2 minute read
+        </small>
+      </div>
+
+      <div class="content-panel content">
+
+        
+
+        <span itemprop="articleBody"><p>We need to update <code class="language-plaintext highlighter-rouge">kramdown(1.17)</code> because of a critical vunerability;</p>
+
+<p><code class="language-plaintext highlighter-rouge">$ bundle audit --update</code></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Name: kramdown
+Version: 1.17.0
+Advisory: CVE-2020-14001
+Criticality: Critical
+URL: https://github.com/advisories/GHSA-mqm2-cgpr-p4m6
+Title: Unintended read access in kramdown gem
+Solution: upgrade to &gt;= 2.3.0
+
+Vulnerabilities found!
+</code></pre></div></div>
+
+<p>However, upgrading <code class="language-plaintext highlighter-rouge">kramdown</code> is not as simple as editing the <code class="language-plaintext highlighter-rouge">Gemfile</code> and running <code class="language-plaintext highlighter-rouge">bundle install</code> or <code class="language-plaintext highlighter-rouge">gem update</code> simply because <code class="language-plaintext highlighter-rouge">kramdown(1.14)</code> is a dependency of <code class="language-plaintext highlighter-rouge">jekyll(3.8.7)</code>;</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>jekyll (3.8.7)
+ 47       addressable (~&gt; 2.4)
+ 48       colorator (~&gt; 1.0)
+ 49       em-websocket (~&gt; 0.5)
+ 50       i18n (~&gt; 0.7)
+ 51       jekyll-sass-converter (~&gt; 1.0)
+ 52       jekyll-watch (~&gt; 2.0)
+ 53       kramdown (~&gt; 1.14)
+ 54       liquid (~&gt; 4.0)
+ 55       mercenary (~&gt; 0.3.3)
+ 56       pathutil (~&gt; 0.9)
+ 57       rouge (&gt;= 1.7, &lt; 4)
+ 58       safe_yaml (~&gt; 1.0)
+
+</code></pre></div></div>
+<p>and is thus fixed. Btw, all version of <code class="language-plaintext highlighter-rouge">kramdown &lt; 2.3.0</code> are vulnerable to <code class="language-plaintext highlighter-rouge">CVE-2020-14001.</code></p>
+
+<p>So to fix that, we could try running;
+<code class="language-plaintext highlighter-rouge">bundle update --patch --conservative kramdown</code></p>
+
+<p>But <code class="language-plaintext highlighter-rouge">bundle</code> reports back with;
+<code class="language-plaintext highlighter-rouge">Bundler attempted to update kramdown but its version stayed the same</code></p>
+
+<p>So upgrading to <code class="language-plaintext highlighter-rouge">Jekyll 3.9.0+</code> is our next option since that comes with <code class="language-plaintext highlighter-rouge">kramdown v2.0+</code>;</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ vi Gemfile
+ 11 # Happy Jekylling!
+ 12 gem "jekyll", "~&gt; 4.0"
+ 13 
+</code></pre></div></div>
+<p>Now when we run <code class="language-plaintext highlighter-rouge">bundle update jekyll</code> <code class="language-plaintext highlighter-rouge">jekyll(3.8.7)</code> and it’s dependencies including <code class="language-plaintext highlighter-rouge">kramdown</code> are updated.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>jekyll (4.1.1)
+ 47       addressable (~&gt; 2.4)
+ 48       colorator (~&gt; 1.0)
+ 49       em-websocket (~&gt; 0.5)
+ 50       i18n (~&gt; 1.0)
+ 51       jekyll-sass-converter (~&gt; 2.0)
+ 52       jekyll-watch (~&gt; 2.0)
+ 53       kramdown (~&gt; 2.1)
+ 54       kramdown-parser-gfm (~&gt; 1.0)
+ 55       liquid (~&gt; 4.0)
+ 56       mercenary (~&gt; 0.4.0)
+ 57       pathutil (~&gt; 0.9)
+ 58       rouge (~&gt; 3.0)
+ 59       safe_yaml (~&gt; 1.0)
+ 60       terminal-table (~&gt; 1.8)
+</code></pre></div></div>
+<p><br /></p>
+<h2 id="cve-2020-14001">CVE-2020-14001?</h2>
+
+<p>According to the national vulnerability database (<a href="https://nvd.nist.gov/">NVD</a>), <a href="https://nvd.nist.gov/vuln/detail/CVE-2020-14001">CVE-2020-14001</a> is a critical vulnerability</p>
+<blockquote>
+  <p>which allows unintended read access (such as template=<code class="language-plaintext highlighter-rouge">/etc/passwd</code>) or unintended embedded Ruby code execution (such as a string that begins with template=”string://&lt;%=`).</p>
+</blockquote>
+
+<p><br /></p>
+<h2 id="html--css--in-kramdown">HTML &amp; CSS  in kramdown</h2>
+
+<p>You can apply a <code class="language-plaintext highlighter-rouge">CSS</code> class anywhere in your karmdown file using the <code class="language-plaintext highlighter-rouge">{: .className}</code> option which makes it easier to style different parts of your <code class="language-plaintext highlighter-rouge">karmdown.</code> 
+karmdown also allows <code class="language-plaintext highlighter-rouge">HTML</code> mixing;</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{::options parse_span_html ="true" /}
+</code></pre></div></div>
+<blockquote>
+  <p>…the kramdown parser processes the content of span HTML tags as text containing span-level elements.</p>
+</blockquote>
+
+<p><br /></p>
+
+<h2 id="the-problem-with-the--extension">The Problem With The  Extension</h2>
+
+<p>Setting <code class="language-plaintext highlighter-rouge">{::options template="/etc/passwd"}</code> allows unintended read access to <code class="language-plaintext highlighter-rouge">/etc/passwd</code> which can help an attacker guess user passwords or gain access to other crucial files in <code class="language-plaintext highlighter-rouge">/etc</code> such as <code class="language-plaintext highlighter-rouge">/etc/shadow</code>.</p>
+
+<p>To mitigate the vulnerability, a <code class="language-plaintext highlighter-rouge">forbidden_inline_options</code> option was added in <code class="language-plaintext highlighter-rouge">karmdown 2.3.0</code>.</p>
+
+<p>This allows developers</p>
+<blockquote>
+  <p>to restrict options allowed with the <code class="language-plaintext highlighter-rouge">{::options /}</code> extensions.</p>
+</blockquote>
+
+</span>
+
+        
+
+        
+        <div class="share">
+          <!-- Go to www.addthis.com/dashboard to customize your tools -->
+          <div class="addthis_sharing_toolbox"></div>
+        </div>
+        
+
+        
+        <div class="tags">
+          <small>
+          <i class="fa fa-tags"></i>
+            update, kramdown, security, vulnerability, CVE-2020-14001
+          </small>
+        </div>
+        
+
+      </div>
+
+      
+      <div class="content-panel feedback">
+        I <i class="fa fa-heart"></i> feedback.<br />
+        Let me know what you think of this article on twitter <a href="http://www.twitter.com/agabalevis">@agabalevis</a> or leave a comment below!
+      </div>
+      
+
+      
+      <div class="content-panel comments">
+        <div id="disqus_thread">
+          <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+          <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        </div>
+      </div>
+      
+
+      
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<script type="text/javascript">
+/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+function disqus_config() { this.experiment.enable_scroll_container = true; }
+var disqus_shortname = "alevis-github-io"; // required: replace example with your forum shortname
+/* * * DON'T EDIT BELOW THIS LINE * * */
+(function() {
+  var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+
+
+      </div>
+    </div>
+
+    <div class="footer clearfix">
+  <div class="col-md-12">
+    Made with <i class="fa fa-heart"></i> by <a href="https://twitter.com/agabalevis">Levis Agaba</a>
+  </div>
+  <!-- <div class="col-md-6"> &lt;/&gt; on <a href="https://github.com/alevis/alevis.github.io">Github</a> &nbsp;<i class="fa fa-github-alt"></i> </div> -->
+</div>
+
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+<script src="/js/jquery.mmenu.min.all.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.7/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<script type="text/javascript">
+   $(document).ready(function() {
+      $("#my-menu").mmenu().on( "closed.mm", function() {
+            $(".menu-button").show();
+         });
+      $(".menu-button").click(function() {
+        $(".menu-button").hide();
+        $("#my-menu").trigger("open.mm");
+      });
+   });
+</script>
+
+
+
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-139204101-1']);
+          _gaq.push(['_trackPageview']);
+  (function () {
+      var ga = document.createElement('script');
+      ga.type = 'text/javascript';
+      ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+
+    </body>
+</html>

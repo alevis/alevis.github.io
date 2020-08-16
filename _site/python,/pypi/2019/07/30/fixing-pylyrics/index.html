@@ -69,17 +69,25 @@
 
     <p class="links">
   
-    <a href="https://www.twitter.com/agabalevis" target="_new"><i class="fa fa-twitter"></i></a>
   
+    <a href="https://www.twitter.com/agabalevis" target="_new">
+	    <i class="fa fa-twitter"></i>
+    </a>
   
-    <a href="https://github.com/alevis" target="_new"><i class="fa fa-github-alt"></i></a>
+
+  
+    <a href="https://github.com/alevis" target="_new">
+	    <i class="fa fa-github-alt"></i>
+    </a>
     <!-- <a href="https://www.freecodecamp.org/alevis" target="_new"><i class="fa fa-free-code-camp"></i></a> -->
     <!-- <a href="https://www.codepen.io/alevis" target="_new"><i class="fa fa-codepen"></i></a> -->
     <!-- <a href="https://repl.it/@alevis" target="_new"><i class="fa fa-code"></i></a> -->
+  <!--  -->
+  <!--  -->
+	<a href="https://marketplace.visualstudio.com/publishers/alevis" target="_new">
+	  	<i class="fa fa-windows"></i>
+  	</a>
   
-  <!--  -->
-  <!--  -->
-  <a href="/feed.xml" target="_new"><i class="fa fa-rss"></i></a>
 </p>
 
   </div>
@@ -121,10 +129,10 @@
 
         
 
-        <span itemprop="articleBody"><p><code class="highlighter-rouge">PyLyrics</code> is a great package for retrieving lyrics. 
-It uses <code class="highlighter-rouge">BeautifulSoup</code> to scrape the lyrics from <code class="highlighter-rouge">lyrics.fandom.com</code></p>
+        <span itemprop="articleBody"><p><code class="language-plaintext highlighter-rouge">PyLyrics</code> is a great package for retrieving lyrics. 
+It uses <code class="language-plaintext highlighter-rouge">BeautifulSoup</code> to scrape the lyrics from <code class="language-plaintext highlighter-rouge">lyrics.fandom.com</code></p>
 
-<p><code class="highlighter-rouge">BeautifulSoup</code> or <code class="highlighter-rouge">bs4</code> provides;</p>
+<p><code class="language-plaintext highlighter-rouge">BeautifulSoup</code> or <code class="language-plaintext highlighter-rouge">bs4</code> provides;</p>
 
 <blockquote>
   <p>Python idioms for iterating, searching, and modifying the parse tree.</p>
@@ -133,14 +141,14 @@ It uses <code class="highlighter-rouge">BeautifulSoup</code> to scrape the lyric
 <p>See <a href="https://pypi.org/project/beautifulsoup4/">here</a> for more information.</p>
 
 <h3 id="mulyrica">Mulyrica</h3>
-<p><code class="highlighter-rouge">PyLyrics</code> is a central part of <code class="highlighter-rouge">Mulyrica</code>, my lyrics search/sentiment analysis app. I was pretty disappointed when it did not work for some queries.
+<p><code class="language-plaintext highlighter-rouge">PyLyrics</code> is a central part of <code class="language-plaintext highlighter-rouge">Mulyrica</code>, my lyrics search/sentiment analysis app. I was pretty disappointed when it did not work for some queries.
 I thought this was a parsing error but upon inspection, it turned out to be something else entirely.</p>
 
 <h3 id="it-works">It works!</h3>
-<p><code class="highlighter-rouge">PyLyrics</code> worked until I tested it on a few songs. 
+<p><code class="language-plaintext highlighter-rouge">PyLyrics</code> worked until I tested it on a few songs. 
 It returned the following error;</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ValueError: Song or Singer does not exist or the API does not have the lyrics
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ValueError: Song or Singer does not exist or the API does not have the lyrics
 </code></pre></div></div>
 
 <p>I checked the website but the lyrics were there. 
@@ -170,7 +178,7 @@ So I opened up a debug session to investigate and find out where the error was b
       <span class="k">for</span> <span class="n">match</span> <span class="ow">in</span> <span class="n">lyrics</span><span class="p">.</span><span class="n">findAll</span><span class="p">(</span><span class="n">tag</span><span class="p">):</span>
         <span class="n">match</span><span class="p">.</span><span class="n">replaceWithChildren</span><span class="p">()</span>
     <span class="c1">#Get output as a string and remove non unicode characters and replace &lt;br&gt; with newlines
-</span>    <span class="n">output</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">lyrics</span><span class="p">).</span><span class="n">encode</span><span class="p">(</span><span class="s">'utf-8'</span><span class="p">,</span> <span class="n">errors</span><span class="o">=</span><span class="s">'replace'</span><span class="p">)[</span><span class="mi">22</span><span class="p">:</span><span class="o">-</span><span class="mi">6</span><span class="p">:].</span><span class="n">decode</span><span class="p">(</span><span class="s">"utf-8"</span><span class="p">).</span><span class="n">replace</span><span class="p">(</span><span class="s">'</span><span class="si">\</span><span class="se">n</span><span class="s">'</span><span class="p">,</span><span class="s">''</span><span class="p">).</span><span class="n">replace</span><span class="s">'&lt;br/&gt;'</span><span class="p">,</span><span class="s">'</span><span class="si">\</span><span class="se">n</span><span class="s">'</span><span class="p">)</span>
+</span>    <span class="n">output</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">lyrics</span><span class="p">).</span><span class="n">encode</span><span class="p">(</span><span class="s">'utf-8'</span><span class="p">,</span> <span class="n">errors</span><span class="o">=</span><span class="s">'replace'</span><span class="p">)[</span><span class="mi">22</span><span class="p">:</span><span class="o">-</span><span class="mi">6</span><span class="p">:].</span><span class="n">decode</span><span class="p">(</span><span class="s">"utf-8"</span><span class="p">).</span><span class="n">replace</span><span class="p">(</span><span class="s">'</span><span class="se">\n</span><span class="s">'</span><span class="p">,</span><span class="s">''</span><span class="p">).</span><span class="n">replace</span><span class="s">'&lt;br/&gt;'</span><span class="p">,</span><span class="s">'</span><span class="se">\n</span><span class="s">'</span><span class="p">)</span>
     <span class="k">try</span><span class="p">:</span>
       <span class="k">return</span> <span class="n">output</span>
     <span class="k">except</span><span class="p">:</span>
@@ -182,7 +190,7 @@ So I opened up a debug session to investigate and find out where the error was b
     <span class="k">raise</span> <span class="nb">ValueError</span><span class="p">(</span><span class="s">"Song or Singer does not exist or the API does not have Lyrics"</span><span class="p">)</span>
     <span class="k">return</span> <span class="bp">None</span></code></pre></figure>
 
-<p>I quickly did a <code class="highlighter-rouge">print lyrics</code> and sure enough they showed up in the debugging shell running in my browser
+<p>I quickly did a <code class="language-plaintext highlighter-rouge">print lyrics</code> and sure enough they showed up in the debugging shell running in my browser
 so the problem was further down.</p>
 
 <h4 id="more-hunting">More <strong>hunting</strong></h4>
@@ -196,46 +204,46 @@ so the problem was further down.</p>
 <figure class="highlight"><pre><code class="language-python" data-lang="python">		<span class="nb">ascii</span> <span class="n">code</span> <span class="n">can</span><span class="s">'t decode byte 0xc3 in position 1245: ordinal not in range(128) in file
 		/venv/lib/python2/site/packages/functions.py</span></code></pre></figure>
 
-<p>That was on line <code class="highlighter-rouge">96</code> in <code class="highlighter-rouge">functions.py</code> under <code class="highlighter-rouge">getLyrics(singer,song)</code></p>
+<p>That was on line <code class="language-plaintext highlighter-rouge">96</code> in <code class="language-plaintext highlighter-rouge">functions.py</code> under <code class="language-plaintext highlighter-rouge">getLyrics(singer,song)</code></p>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python">		<span class="c1">#Remove unecessary tags
 </span>		<span class="k">for</span> <span class="n">tag</span> <span class="ow">in</span> <span class="p">[</span><span class="s">'div'</span><span class="p">,</span><span class="s">'i'</span><span class="p">,</span><span class="s">'b'</span><span class="p">,</span><span class="s">'a'</span><span class="p">]:</span>
 			<span class="k">for</span> <span class="n">match</span> <span class="ow">in</span> <span class="n">lyrics</span><span class="p">.</span><span class="n">findAll</span><span class="p">(</span><span class="n">tag</span><span class="p">):</span>
 				<span class="n">match</span><span class="p">.</span><span class="n">replaceWithChildren</span><span class="p">()</span>
 		<span class="c1">#Get output as a string and remove non unicode characters and replace &lt;br&gt; with newlines
-</span>		<span class="n">output</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">lyrics</span><span class="p">).</span><span class="n">encode</span><span class="p">(</span><span class="s">'utf-8'</span><span class="p">,</span> <span class="n">errors</span><span class="o">=</span><span class="s">'replace'</span><span class="p">)[</span><span class="mi">22</span><span class="p">:</span><span class="o">-</span><span class="mi">6</span><span class="p">:].</span><span class="n">decode</span><span class="p">(</span><span class="s">"utf-8"</span><span class="p">).</span><span class="n">replace</span><span class="p">(</span><span class="s">'</span><span class="si">\</span><span class="se">n</span><span class="s">'</span><span class="p">,</span><span class="s">''</span><span class="p">).</span><span class="n">replace</span><span class="p">(</span><span class="s">'&lt;br/&gt;'</span><span class="p">,</span><span class="s">'</span><span class="si">\</span><span class="se">n</span><span class="s">'</span><span class="p">)</span>
+</span>		<span class="n">output</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">lyrics</span><span class="p">).</span><span class="n">encode</span><span class="p">(</span><span class="s">'utf-8'</span><span class="p">,</span> <span class="n">errors</span><span class="o">=</span><span class="s">'replace'</span><span class="p">)[</span><span class="mi">22</span><span class="p">:</span><span class="o">-</span><span class="mi">6</span><span class="p">:].</span><span class="n">decode</span><span class="p">(</span><span class="s">"utf-8"</span><span class="p">).</span><span class="n">replace</span><span class="p">(</span><span class="s">'</span><span class="se">\n</span><span class="s">'</span><span class="p">,</span><span class="s">''</span><span class="p">).</span><span class="n">replace</span><span class="p">(</span><span class="s">'&lt;br/&gt;'</span><span class="p">,</span><span class="s">'</span><span class="se">\n</span><span class="s">'</span><span class="p">)</span>
 		<span class="k">try</span><span class="p">:</span>
 			<span class="k">return</span> <span class="n">output</span>
 		<span class="k">except</span><span class="p">:</span>
 			<span class="k">return</span> <span class="n">output</span><span class="p">.</span><span class="n">encode</span><span class="p">(</span><span class="s">"utf-8"</span><span class="p">)</span></code></pre></figure>
 
-<p>I thought <code class="highlighter-rouge">encoding</code> the lyrics twice didn’t make sense so I removed call to the encoding method;</p>
+<p>I thought <code class="language-plaintext highlighter-rouge">encoding</code> the lyrics twice didn’t make sense so I removed call to the encoding method;</p>
 
-<figure class="highlight"><pre><code class="language-python" data-lang="python">		<span class="n">output</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">lyrics</span><span class="p">).</span><span class="n">encode</span><span class="p">(</span><span class="s">'utf-8'</span><span class="p">,</span> <span class="n">errors</span><span class="o">=</span><span class="s">'replace'</span><span class="p">)[</span><span class="mi">22</span><span class="p">:</span><span class="o">-</span><span class="mi">6</span><span class="p">:].</span><span class="n">decode</span><span class="p">(</span><span class="s">"utf-8"</span><span class="p">).</span><span class="n">replace</span><span class="p">(</span><span class="s">'</span><span class="si">\</span><span class="se">n</span><span class="s">'</span><span class="p">,</span><span class="s">''</span><span class="p">).</span><span class="n">replace</span><span class="p">(</span><span class="s">'&lt;br/&gt;'</span><span class="p">,</span><span class="s">'</span><span class="si">\</span><span class="se">n</span><span class="s">'</span><span class="p">)</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-python" data-lang="python">		<span class="n">output</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">lyrics</span><span class="p">).</span><span class="n">encode</span><span class="p">(</span><span class="s">'utf-8'</span><span class="p">,</span> <span class="n">errors</span><span class="o">=</span><span class="s">'replace'</span><span class="p">)[</span><span class="mi">22</span><span class="p">:</span><span class="o">-</span><span class="mi">6</span><span class="p">:].</span><span class="n">decode</span><span class="p">(</span><span class="s">"utf-8"</span><span class="p">).</span><span class="n">replace</span><span class="p">(</span><span class="s">'</span><span class="se">\n</span><span class="s">'</span><span class="p">,</span><span class="s">''</span><span class="p">).</span><span class="n">replace</span><span class="p">(</span><span class="s">'&lt;br/&gt;'</span><span class="p">,</span><span class="s">'</span><span class="se">\n</span><span class="s">'</span><span class="p">)</span></code></pre></figure>
 
 <p>New code;</p>
 
-<figure class="highlight"><pre><code class="language-python" data-lang="python">		<span class="n">output</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">lyrics</span><span class="p">)[</span><span class="mi">22</span><span class="p">:</span><span class="o">-</span><span class="mi">6</span><span class="p">:].</span><span class="n">decode</span><span class="p">(</span><span class="s">"utf-8"</span><span class="p">).</span><span class="n">replace</span><span class="p">(</span><span class="s">'</span><span class="si">\</span><span class="se">n</span><span class="s">'</span><span class="p">,</span><span class="s">''</span><span class="p">).</span><span class="n">replace</span><span class="p">(</span><span class="s">'&lt;br/&gt;'</span><span class="p">,</span><span class="s">'</span><span class="si">\</span><span class="se">n</span><span class="s">'</span><span class="p">)</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-python" data-lang="python">		<span class="n">output</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">lyrics</span><span class="p">)[</span><span class="mi">22</span><span class="p">:</span><span class="o">-</span><span class="mi">6</span><span class="p">:].</span><span class="n">decode</span><span class="p">(</span><span class="s">"utf-8"</span><span class="p">).</span><span class="n">replace</span><span class="p">(</span><span class="s">'</span><span class="se">\n</span><span class="s">'</span><span class="p">,</span><span class="s">''</span><span class="p">).</span><span class="n">replace</span><span class="p">(</span><span class="s">'&lt;br/&gt;'</span><span class="p">,</span><span class="s">'</span><span class="se">\n</span><span class="s">'</span><span class="p">)</span></code></pre></figure>
 
-<p>Saved the script and restarted the <code class="highlighter-rouge">flask app</code> again. 
+<p>Saved the script and restarted the <code class="language-plaintext highlighter-rouge">flask app</code> again. 
 I now had a situation were queries that had caused problems before were working and a few of 
 previously error-free queries were suddenly not working.</p>
 
-<p>Curiously, I tried running all queries under two environments, one used <code class="highlighter-rouge">python2.7</code> the other 
-used <code class="highlighter-rouge">python3.5</code>.</p>
+<p>Curiously, I tried running all queries under two environments, one used <code class="language-plaintext highlighter-rouge">python2.7</code> the other 
+used <code class="language-plaintext highlighter-rouge">python3.5</code>.</p>
 
 <p>It was then that I realized that this was a matter of different versions of python. 
-The package was made for and tested only on <code class="highlighter-rouge">python3+</code></p>
+The package was made for and tested only on <code class="language-plaintext highlighter-rouge">python3+</code></p>
 
-<p>I quickly seperated what worked for <code class="highlighter-rouge">python3</code> from what workd for <code class="highlighter-rouge">python2</code> and everything finally worked.</p>
+<p>I quickly seperated what worked for <code class="language-plaintext highlighter-rouge">python3</code> from what workd for <code class="language-plaintext highlighter-rouge">python2</code> and everything finally worked.</p>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python">  <span class="c1">#Python 3
 </span>  <span class="k">if</span> <span class="n">sys</span><span class="p">.</span><span class="n">version_info</span><span class="p">.</span><span class="n">major</span> <span class="o">&gt;</span> <span class="mi">2</span><span class="p">:</span>
     <span class="n">output</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">lyrics</span><span class="p">).</span><span class="n">encode</span><span class="p">(</span><span class="s">'utf-8'</span><span class="p">,</span> <span class="n">errors</span><span class="o">=</span><span class="s">'replace'</span><span class="p">)[</span><span class="mi">22</span><span class="p">:</span><span class="o">-</span><span class="mi">6</span><span class="p">:].</span>\
-        <span class="n">decode</span><span class="p">(</span><span class="s">"utf-8"</span><span class="p">).</span><span class="n">replace</span><span class="p">(</span><span class="s">'</span><span class="si">\</span><span class="se">n</span><span class="s">'</span><span class="p">,</span><span class="s">''</span><span class="p">).</span><span class="n">replace</span><span class="p">(</span><span class="s">'&lt;br/&gt;'</span><span class="p">,</span><span class="s">'</span><span class="si">\</span><span class="se">n</span><span class="s">'</span><span class="p">)</span>
+        <span class="n">decode</span><span class="p">(</span><span class="s">"utf-8"</span><span class="p">).</span><span class="n">replace</span><span class="p">(</span><span class="s">'</span><span class="se">\n</span><span class="s">'</span><span class="p">,</span><span class="s">''</span><span class="p">).</span><span class="n">replace</span><span class="p">(</span><span class="s">'&lt;br/&gt;'</span><span class="p">,</span><span class="s">'</span><span class="se">\n</span><span class="s">'</span><span class="p">)</span>
   <span class="k">else</span><span class="p">:</span> <span class="c1"># Python 2
-</span>    <span class="n">output</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">lyrics</span><span class="p">)[</span><span class="mi">22</span><span class="p">:</span><span class="o">-</span><span class="mi">6</span><span class="p">:].</span><span class="n">decode</span><span class="p">(</span><span class="s">"utf-8"</span><span class="p">).</span><span class="n">replace</span><span class="p">(</span><span class="s">'</span><span class="si">\</span><span class="se">n</span><span class="s">'</span><span class="p">,</span><span class="s">''</span><span class="p">).</span>\
-        <span class="n">replace</span><span class="p">(</span><span class="s">'&lt;br/&gt;'</span><span class="p">,</span><span class="s">'</span><span class="si">\</span><span class="se">n</span><span class="s">'</span><span class="p">)</span>
+</span>    <span class="n">output</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">lyrics</span><span class="p">)[</span><span class="mi">22</span><span class="p">:</span><span class="o">-</span><span class="mi">6</span><span class="p">:].</span><span class="n">decode</span><span class="p">(</span><span class="s">"utf-8"</span><span class="p">).</span><span class="n">replace</span><span class="p">(</span><span class="s">'</span><span class="se">\n</span><span class="s">'</span><span class="p">,</span><span class="s">''</span><span class="p">).</span>\
+        <span class="n">replace</span><span class="p">(</span><span class="s">'&lt;br/&gt;'</span><span class="p">,</span><span class="s">'</span><span class="se">\n</span><span class="s">'</span><span class="p">)</span>
   <span class="k">try</span><span class="p">:</span>
     <span class="k">return</span> <span class="p">[</span><span class="n">album</span><span class="p">,</span> <span class="n">output</span><span class="p">]</span>
   <span class="k">except</span><span class="p">:</span>

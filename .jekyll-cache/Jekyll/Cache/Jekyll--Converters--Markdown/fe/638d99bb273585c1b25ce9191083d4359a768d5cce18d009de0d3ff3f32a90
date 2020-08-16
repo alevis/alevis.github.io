@@ -1,0 +1,98 @@
+I"�<p>We need to update <code class="language-plaintext highlighter-rouge">kramdown(1.17)</code> because of a critical vunerability;</p>
+
+<p><code class="language-plaintext highlighter-rouge">$ bundle audit --update</code></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Name: kramdown
+Version: 1.17.0
+Advisory: CVE-2020-14001
+Criticality: Critical
+URL: https://github.com/advisories/GHSA-mqm2-cgpr-p4m6
+Title: Unintended read access in kramdown gem
+Solution: upgrade to &gt;= 2.3.0
+
+Vulnerabilities found!
+</code></pre></div></div>
+
+<p>However, upgrading <code class="language-plaintext highlighter-rouge">kramdown</code> is not as simple as editing the <code class="language-plaintext highlighter-rouge">Gemfile</code> and running <code class="language-plaintext highlighter-rouge">bundle install</code> or <code class="language-plaintext highlighter-rouge">gem update</code> simply because <code class="language-plaintext highlighter-rouge">kramdown(1.14)</code> is a dependency of <code class="language-plaintext highlighter-rouge">jekyll(3.8.7)</code>;</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>jekyll (3.8.7)
+ 47       addressable (~&gt; 2.4)
+ 48       colorator (~&gt; 1.0)
+ 49       em-websocket (~&gt; 0.5)
+ 50       i18n (~&gt; 0.7)
+ 51       jekyll-sass-converter (~&gt; 1.0)
+ 52       jekyll-watch (~&gt; 2.0)
+ 53       kramdown (~&gt; 1.14)
+ 54       liquid (~&gt; 4.0)
+ 55       mercenary (~&gt; 0.3.3)
+ 56       pathutil (~&gt; 0.9)
+ 57       rouge (&gt;= 1.7, &lt; 4)
+ 58       safe_yaml (~&gt; 1.0)
+
+</code></pre></div></div>
+<p>and is thus fixed. Btw, all version of <code class="language-plaintext highlighter-rouge">kramdown &lt; 2.3.0</code> are vulnerable to <code class="language-plaintext highlighter-rouge">CVE-2020-14001.</code></p>
+
+<p>So to fix that, we could try running;
+<code class="language-plaintext highlighter-rouge">bundle update --patch --conservative kramdown</code></p>
+
+<p>But <code class="language-plaintext highlighter-rouge">bundle</code> reports back with;
+<code class="language-plaintext highlighter-rouge">Bundler attempted to update kramdown but its version stayed the same</code></p>
+
+<p>So upgrading to <code class="language-plaintext highlighter-rouge">Jekyll 3.9.0+</code> is our next option since that comes with <code class="language-plaintext highlighter-rouge">kramdown v2.0+</code>;</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ vi Gemfile
+ 11 # Happy Jekylling!
+ 12 gem "jekyll", "~&gt; 4.0"
+ 13 
+</code></pre></div></div>
+<p>Now when we run <code class="language-plaintext highlighter-rouge">bundle update jekyll</code> <code class="language-plaintext highlighter-rouge">jekyll(3.8.7)</code> and it’s dependencies including <code class="language-plaintext highlighter-rouge">kramdown</code> are updated.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>jekyll (4.1.1)
+ 47       addressable (~&gt; 2.4)
+ 48       colorator (~&gt; 1.0)
+ 49       em-websocket (~&gt; 0.5)
+ 50       i18n (~&gt; 1.0)
+ 51       jekyll-sass-converter (~&gt; 2.0)
+ 52       jekyll-watch (~&gt; 2.0)
+ 53       kramdown (~&gt; 2.1)
+ 54       kramdown-parser-gfm (~&gt; 1.0)
+ 55       liquid (~&gt; 4.0)
+ 56       mercenary (~&gt; 0.4.0)
+ 57       pathutil (~&gt; 0.9)
+ 58       rouge (~&gt; 3.0)
+ 59       safe_yaml (~&gt; 1.0)
+ 60       terminal-table (~&gt; 1.8)
+</code></pre></div></div>
+<p><br /></p>
+<h2 id="cve-2020-14001">CVE-2020-14001?</h2>
+
+<p>According to the national vulnerability database (<a href="https://nvd.nist.gov/">NVD</a>), <a href="https://nvd.nist.gov/vuln/detail/CVE-2020-14001">CVE-2020-14001</a> is a critical vulnerability</p>
+<blockquote>
+  <p>which allows unintended read access (such as template=<code class="language-plaintext highlighter-rouge">/etc/passwd</code>) or unintended embedded Ruby code execution (such as a string that begins with template=”string://&lt;%=`).</p>
+</blockquote>
+
+<p><br /></p>
+<h2 id="html--css--in-kramdown">HTML &amp; CSS  in kramdown</h2>
+
+<p>You can apply a <code class="language-plaintext highlighter-rouge">CSS</code> class anywhere in your karmdown file using the <code class="language-plaintext highlighter-rouge">{: .className}</code> option which makes it easier to style different parts of your <code class="language-plaintext highlighter-rouge">karmdown.</code> 
+karmdown also allows <code class="language-plaintext highlighter-rouge">HTML</code> mixing;</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{::options parse_span_html ="true" /}
+</code></pre></div></div>
+<blockquote>
+  <p>…the kramdown parser processes the content of span HTML tags as text containing span-level elements.</p>
+</blockquote>
+
+<p><br /></p>
+
+<h2 id="the-problem-with-the--extension">The Problem With The  Extension</h2>
+
+<p>Setting <code class="language-plaintext highlighter-rouge">{::options template="/etc/passwd"}</code> allows unintended read access to <code class="language-plaintext highlighter-rouge">/etc/passwd</code> which can help an attacker guess user passwords or gain access to other crucial files in <code class="language-plaintext highlighter-rouge">/etc</code> such as <code class="language-plaintext highlighter-rouge">/etc/shadow</code>.</p>
+
+<p>To mitigate the vulnerability, a <code class="language-plaintext highlighter-rouge">forbidden_inline_options</code> option was added in <code class="language-plaintext highlighter-rouge">karmdown 2.3.0</code>.</p>
+
+<p>This allows developers</p>
+<blockquote>
+  <p>to restrict options allowed with the <code class="language-plaintext highlighter-rouge">{::options /}</code> extensions.</p>
+</blockquote>
+
+:ET
