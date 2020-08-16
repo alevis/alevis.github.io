@@ -1,17 +1,10 @@
-# My Personal blog
-
-## Updates
-- Upgraded some packages
-- Included link to resume.
-- Added blog post.
+# My blog
 
 ## Starting
 `$ bundle install` then
 `$ bundle exec jekyll serve`
 or 
 `jekyll serve`
-
-
 
 ## Compiling CSS
 run `$ gulp` to compile `css`
