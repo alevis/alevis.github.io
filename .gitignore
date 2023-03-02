@@ -4,6 +4,7 @@ Gemfile.lock
 TODO.md
 /.bundle
 *.db
+vendor/bundle/ruby/3.0.0/
 vendor/log/*.log
 /tmp
 config/database.yml
