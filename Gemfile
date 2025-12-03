@@ -13,13 +13,12 @@ gem "jekyll", "~> 4.1.1"
 
 # This is the default theme for new Jekyll sites. You may change this to anything you like.
 gem "minima", "~> 2.0"
-
+# Add webrick which was removed from Ruby's standard library in 3.0
+gem "webrick", "~> 1.8"
 # Bootstrap 4.3.1
 gem 'bootstrap', '~> 4.3', '>= 4.3.1'
-
 # jQuery for rails
 gem 'jquery-rails', '~> 4.3', '>= 4.3.5'
-
 # jQuery easing
 gem 'jquery-easing-rails', '~> 0.0.2'
 

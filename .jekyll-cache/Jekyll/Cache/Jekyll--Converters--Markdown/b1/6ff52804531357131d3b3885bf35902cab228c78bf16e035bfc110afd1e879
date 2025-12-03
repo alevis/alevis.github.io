@@ -1,0 +1,102 @@
+I"þ6<h2 id="what-is-a-list-comprehension">What is a list comprehension;</h2>
+
+<p>According to <code class="language-plaintext highlighter-rouge">wikipedia</code> a list comprehension</p>
+
+<blockquote>
+  <p>is a syntactic construct available in some programming languages for creating a list based on existing lists.</p>
+</blockquote>
+
+<p>The general format is;</p>
+
+<p><code class="language-plaintext highlighter-rouge">list = { output_expressions | variable in input_set, predicate }</code></p>
+
+<p>Here are some simple examples</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python">  
+  <span class="kn">import</span> <span class="nn">math</span>
+  <span class="n">limit</span> <span class="o">=</span> <span class="mi">1440</span>
+  <span class="n">l1</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">math</span><span class="p">.</span><span class="n">pi</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> 
+       <span class="p">[</span><span class="n">y</span> <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">limit</span><span class="p">)</span> <span class="k">if</span> <span class="n">y</span> <span class="o">%</span> <span class="mi">3</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">y</span> <span class="o">%</span> <span class="mi">7</span> <span class="o">==</span> <span class="mi">0</span><span class="p">]]</span></code></pre></figure>
+
+<p>The resulting list contains some interesting numbers fit for number theory study.</p>
+
+<h2 id="interesting-comprehensions-in-python">Interesting Comprehensions in Python</h2>
+
+<p>Hereâ€™s a simple list comprehension</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python">  
+  <span class="n">fruits</span> <span class="o">=</span> <span class="p">[</span><span class="s">"apple"</span><span class="p">,</span><span class="s">"banana"</span><span class="p">,</span><span class="s">"orange"</span><span class="p">,</span><span class="s">"kiwi"</span><span class="p">,</span><span class="s">"guava"</span><span class="p">]</span>
+  <span class="n">gr</span> <span class="o">=</span> <span class="p">((</span><span class="mi">1</span><span class="o">+</span><span class="mi">5</span><span class="o">**</span><span class="mf">0.5</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+  <span class="k">def</span> <span class="nf">price</span><span class="p">(</span><span class="n">fruit</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="n">fruit</span><span class="p">)</span><span class="o">*</span><span class="n">gr</span>
+
+  <span class="n">prices</span> <span class="o">=</span> <span class="p">[</span><span class="n">price</span><span class="p">(</span><span class="n">fruit</span><span class="p">)</span> <span class="k">for</span> <span class="n">fruit</span> <span class="ow">in</span> <span class="n">fruits</span><span class="p">]</span></code></pre></figure>
+
+<h3 id="applying-different-functions-to-elements">Applying different functions to elements</h3>
+
+<p>You want to have a price setting function for fruit you are selling in you grocery store</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python">  
+  <span class="kn">import</span> <span class="nn">math</span>
+  <span class="n">gr</span> <span class="o">=</span> <span class="p">((</span><span class="mi">1</span><span class="o">+</span><span class="mi">5</span><span class="o">**</span><span class="mf">0.5</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+  <span class="n">fruits</span> <span class="o">=</span> <span class="p">[</span><span class="s">"apples"</span><span class="p">,</span><span class="s">"bananas"</span><span class="p">,</span><span class="s">"oranges"</span><span class="p">]</span>
+  <span class="n">operations</span> <span class="o">=</span> <span class="p">[</span><span class="k">lambda</span> <span class="n">apples</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">apples</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">apples</span><span class="p">)</span><span class="o">/</span><span class="mi">10</span><span class="p">),</span> 
+                <span class="k">lambda</span> <span class="n">bananas</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">bananas</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">bananas</span><span class="p">)</span><span class="o">/</span><span class="n">math</span><span class="p">.</span><span class="n">pi</span><span class="p">),</span>
+                <span class="k">lambda</span> <span class="n">oranges</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">oranges</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">oranges</span><span class="p">)</span><span class="o">/</span><span class="n">gr</span><span class="p">)]</span>
+  <span class="c1"># Set the prices
+</span>  <span class="n">prices</span> <span class="o">=</span> <span class="p">[</span><span class="n">op</span><span class="p">(</span><span class="n">fruit</span><span class="p">)</span> <span class="k">for</span> <span class="n">op</span><span class="p">,</span> <span class="n">fruit</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">operations</span><span class="p">,</span><span class="n">fruits</span><span class="p">)]</span></code></pre></figure>
+
+<h2 id="automation-example">Automation example</h2>
+
+<p>Suppose you have a list of machines identifiable by their mac address and you want to assign a machine to each user in a userlist. 
+Ideally there should be a machine available for every user in the userlist.</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python">  <span class="k">class</span> <span class="nc">Machine</span><span class="p">:</span>
+      <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">mac</span><span class="p">):</span>
+          <span class="bp">self</span><span class="p">.</span><span class="n">mac_address</span> <span class="o">=</span> <span class="n">mac</span>
+          <span class="bp">self</span><span class="p">.</span><span class="n">uptime</span> <span class="o">=</span> <span class="mi">0</span>
+
+  <span class="k">class</span> <span class="nc">User</span><span class="p">:</span>
+      <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">user_name</span><span class="p">,</span><span class="n">user_age</span><span class="p">):</span>
+          <span class="bp">self</span><span class="p">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">user_name</span>
+          <span class="bp">self</span><span class="p">.</span><span class="n">age</span> <span class="o">=</span> <span class="n">user_age</span>
+
+  <span class="n">machines</span> <span class="o">=</span> <span class="p">[</span><span class="n">Machine</span><span class="p">(</span><span class="s">'135-144-255-117-098-023'</span><span class="p">),</span>
+              <span class="n">Machine</span><span class="p">(</span><span class="s">'123-209-089-023-113-210'</span><span class="p">),</span>
+              <span class="n">Machine</span><span class="p">(</span><span class="s">'109-209-221-112-213-231'</span><span class="p">)]</span>
+
+  <span class="n">users</span> <span class="o">=</span> <span class="p">[</span><span class="n">User</span><span class="p">(</span><span class="s">'Joe'</span><span class="p">,</span><span class="mi">21</span><span class="p">),</span><span class="n">User</span><span class="p">(</span><span class="s">'Kate'</span><span class="p">,</span><span class="mi">25</span><span class="p">),</span><span class="n">User</span><span class="p">(</span><span class="s">'Kevin'</span><span class="p">,</span><span class="mi">17</span><span class="p">)]</span></code></pre></figure>
+
+<h3 id="combining-the-two">Combining the two</h3>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python">  <span class="n">ums</span> <span class="o">=</span> <span class="p">{</span> <span class="n">machine</span><span class="p">.</span><span class="n">mac_address</span><span class="p">:</span><span class="n">user</span><span class="p">.</span><span class="n">name</span> <span class="k">for</span> <span class="n">machine</span><span class="p">,</span> <span class="n">user</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">machines</span><span class="p">,</span><span class="n">users</span><span class="p">)</span> <span class="p">}</span>
+  <span class="k">print</span><span class="p">(</span><span class="n">ums</span><span class="p">)</span> <span class="c1"># should output a dictionary of mac_address username pairs</span></code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python">  
+  <span class="p">[{</span><span class="s">'135-144-255-117-098-023'</span><span class="p">:</span><span class="s">'Joe'</span><span class="p">}</span>
+  <span class="p">{</span><span class="s">'123-209-089-023-113-210'</span><span class="p">:</span><span class="s">'Kate'</span><span class="p">}]</span></code></pre></figure>
+
+<h3 id="modifying-the-list">Modifying the list</h3>
+
+<p>We want to capture a user so we assign a user dict value to each mac_address key</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python">    <span class="n">ums</span> <span class="o">=</span> <span class="p">{</span> <span class="n">machine</span><span class="p">.</span><span class="n">mac_address</span><span class="p">:{</span><span class="n">user</span><span class="p">.</span><span class="n">name</span><span class="p">,</span><span class="n">user</span><span class="p">.</span><span class="n">age</span><span class="p">}</span> <span class="k">for</span> <span class="n">machine</span><span class="p">,</span> <span class="n">user</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">machines</span><span class="p">,</span><span class="n">users</span><span class="p">)</span> <span class="p">}</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">ums</span><span class="p">)</span> <span class="c1"># should output a dictionary of mac_address user dictionary pairs</span></code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python">  <span class="p">[{</span><span class="s">'135-144-255-117-098-023'</span><span class="p">:{</span><span class="s">'Joe'</span><span class="p">,</span><span class="mi">21</span><span class="p">}},</span>
+  <span class="p">{</span><span class="s">'123-209-089-023-113-210'</span><span class="p">:{</span><span class="s">'Kate'</span><span class="p">,</span><span class="mi">25</span><span class="p">}},</span>
+  <span class="p">{</span><span class="s">'109-209-221-112-213-231'</span><span class="p">:{</span><span class="s">'Kevin'</span><span class="p">,</span><span class="mi">17</span><span class="p">}}]</span></code></pre></figure>
+
+<p>And supposing we now want to filter the list of dictionaries to show only machines (represented by their mac addresses ) assigned to users above a certain age;</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python">    <span class="n">ums</span> <span class="o">=</span> <span class="p">{</span> <span class="n">machine</span><span class="p">.</span><span class="n">mac_address</span><span class="p">:{</span><span class="n">user</span><span class="p">.</span><span class="n">name</span><span class="p">,</span><span class="n">user</span><span class="p">.</span><span class="n">age</span><span class="p">}</span> <span class="k">for</span> <span class="n">machine</span><span class="p">,</span> <span class="n">user</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">machines</span><span class="p">,</span><span class="n">users</span><span class="p">)</span> <span class="k">if</span> <span class="n">user</span><span class="p">.</span><span class="n">age</span> <span class="o">&gt;</span> <span class="mi">18</span> <span class="p">}</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">ums</span><span class="p">)</span> <span class="c1"># should show a list of length 2 containing users `Joe(21)` and `Kate(27)</span></code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python">  <span class="p">[</span>
+    <span class="p">{</span><span class="s">'135-144-255-117-098-023'</span><span class="p">:{</span><span class="s">'Joe'</span><span class="p">,</span><span class="mi">21</span><span class="p">}},</span>
+    <span class="p">{</span><span class="s">'123-209-089-023-113-210'</span><span class="p">:{</span><span class="s">'Kate'</span><span class="p">,</span><span class="mi">25</span><span class="p">}}</span>
+  <span class="p">]</span></code></pre></figure>
+
+<p>Happy <code class="language-plaintext highlighter-rouge">coding</code>.</p>
+
+:ET

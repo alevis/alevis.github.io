@@ -1,11 +1,19 @@
 [
   
   {
+    "title"    : "Python Comprehensions (1/3)",
+    "category" : "",
+    "tags"     : "python, comprehensions",
+    "url"      : "/python,/dictionaries,/list/comprehensions/2025/12/03/python-comprehensions/",
+    "date"     : "2025-12-03 13:01:00 +0000"
+    } ,
+    
+  {
     "title"    : "CVE-2020-14001 remediation",
     "category" : "",
     "tags"     : "update, kramdown, security, vulnerability, CVE-2020-14001",
     "url"      : "/jekyll,/kramdown,/security/2020/08/16/kramdown/",
-    "date"     : "2020-08-16 00:00:00 -0700"
+    "date"     : "2020-08-16 00:00:00 +0000"
     } ,
     
   {
@@ -13,7 +21,7 @@
     "category" : "",
     "tags"     : "bug, error, python, package, flask",
     "url"      : "/python,/pypi/2019/07/30/fixing-pylyrics/",
-    "date"     : "2019-07-30 20:10:00 -0700"
+    "date"     : "2019-07-30 20:10:00 +0000"
     } ,
     
   {
@@ -21,7 +29,7 @@
     "category" : "",
     "tags"     : "welcome, to, carte, noire",
     "url"      : "/jekyll/2019/03/27/welcome-to-my-blog/",
-    "date"     : "2019-03-27 08:31:19 -0700"
+    "date"     : "2019-03-27 15:31:19 +0000"
     } 
     
   ]
