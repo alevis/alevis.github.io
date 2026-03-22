@@ -2,6 +2,8 @@
 @import url(https://fonts.googleapis.com/css?family=Montserrat);
 @import url(https://fonts.googleapis.com/css?family=Anonymous+Pro:400,700);
 @import url('https://fonts.googleapis.com/css?family=Muli=300|Ubuntu&display=swap');
+@import url(https://fonts.googleapis.com/css?family=Cookie&display=swap);
+@import url(https://fonts.googleapis.com/css?family=Cookie&display=swap);
 
 /* Colours */
 $twitter:        #6dabda;
@@ -140,6 +142,21 @@ ul {
 	margin-top: 20px;
 	box-shadow: 0px 0px 0px 0px, 0px 6px 12px rgba(0, 0, 0, 0.2);
 	border-bottom: 5px solid $light-blue;
+
+	&.post-navigation-panel {
+		border-bottom: none;
+		border-left: none;
+		border-right: none;
+		border-top: none;
+		padding-top: 0px;
+		padding-bottom: 0px;
+		padding-left: 0px;
+		padding-right: 0px;
+		box-shadow: none;
+		background-color: transparent;
+		margin-top: 20px;
+		margin-bottom: 20px;
+	}
 }
 
 #my-menu {
@@ -556,6 +573,7 @@ ul {
 		}
 
 		.author {
+			font-family: 'Borel', cursive;
 			font-size: 20px;
 			text-align: center;
 			margin-bottom: 0px;
@@ -610,36 +628,36 @@ ul {
 			blockquote {
 				position: relative;
 				width: 100%;
-		    margin-left: -15px;
-				padding-right: 10px;
+				margin-left: 0px;
+				padding-left: 30px;
+				padding-right: 30px;
 				background-color: $darker;
 				color: white;
-				box-sizing: content-box;
+				box-sizing: border-box;
 				border: none;
 				font-size: 28px;
+				font-family: 'Cookie', cursive;
 
-				@media (min-width: $screen-sm-min) {
-					margin-left: -30px;
-					padding-left: 45px;
-					padding-right: 15px;
-				}
-
-				p {
+			@media (min-width: $screen-sm-min) {
+				margin-left: 0px;
+				padding-left: 30px;
+				padding-right: 30px;
+			}				p {
 			    margin: 0;
 			    padding: 15px;
 					z-index: 0;
 				}
 
-				:before {
-    			font-family: "Times New Roman";
-					color: $light-medium;
-			    content: "“";
-			    position: absolute;
-			    top: 15px;
-			    left: 15px;
-			    font-size: 65px;
-			    font-weight: bold;
-				}
+			:before {
+				font-family: 'Cookie', cursive;
+				color: $light-medium;
+				content: "";
+				position: absolute;
+				top: 15px;
+				left: 15px;
+				font-size: 65px;
+				font-weight: bold;
+			}
 
 			}
 
@@ -784,8 +802,31 @@ ul {
 		margin-bottom: 0px;
 	}
 
+	.post-navigation {
+		display: flex;
+		gap: 20px;
+		width: 100%;
+		padding-left: 30px;
+		padding-right: 30px;
+		box-sizing: border-box;
+		border: none;
+		border-left: none !important;
+		border-right: none !important;
+		
+		@media (min-width: $screen-sm-min) {
+			gap: 40px;
+		}
+	}
+
 	.previous-next {
-		width: 50%;
+		flex: 1;
+		border: none !important;
+		border-left: none !important;
+		border-right: none !important;
+		border-top: none !important;
+		border-bottom: none !important;
+		outline: none !important;
+		box-shadow: none !important;
 
 		a {
 			color: $white;
@@ -794,15 +835,27 @@ ul {
 		a:hover {
 			color: $light;
 		}
+
+		p {
+			margin-bottom: 5px;
+		}
+
+		.nav-label {
+			margin-bottom: 5px;
+		}
+
+		.date {
+			margin-top: 5px;
+		}
 	}
 
 	.next {
-		float: right;
 		text-align: right;
+		/* Remove right teal border shown in compiled CSS */
+		border-right: none !important;
 	}
 
 	.previous {
-		float: left;
 		text-align: left;
 	}
 

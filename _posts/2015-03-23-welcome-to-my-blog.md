@@ -4,7 +4,7 @@ title:      Welcome to My Blog
 date:       2019-03-27 15:31:19
 author:     Levis Agaba
 summary:    Welcome to my blog
-categories: jekyll
+categories: Personal Welcome
 thumbnail:  book
 published: true
 tags:

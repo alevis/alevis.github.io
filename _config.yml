@@ -1,28 +1,28 @@
 # Site settings
-title: "Agaba Levis"
+title: "Levis Agaba"
 email: alevis.github.io
 description: "Blogging site."
-author: "Agaba Levis"
+author: "Levis Agaba"
 baseurl: ""
 url: "http://alevis.github.io/"
-title_description: "My blog."
+title_description: "On writing and life."
 title_image: "https://avatars1.githubusercontent.com/u/9142438?s=460&v=4"
 google_analytics: "UA-139204101-1"
 disqus_account: alevis-github-io
 github_repository: https://github.com/alevis/alevis.github.io
 addthis_id: ra-513c6fa83da6ec67
-post_limit: 5
+post_limit: 3
 
 # Social usernames/URLs
 username: alevis
 fullname: levis-agaba
-twitter_username: agabalevis
+# twitter_username: agabalevis
 # Footer
-footer_left: "Made with <i class=\"fa fa-heart\"></i> by <a href=\"https://twitter.com/agabalevis\">Levis Agaba</a>"
-footer_right: "&lt;/&gt; on <a href=\"https://github.com/alevis/alevis.github.io\">Github</a> &nbsp;<i class=\"fa fa-github-alt\"></i>"
+footer_left: '<a href="https://github.com/alevis"><i class="fa fa-github-alt"></i> My GitHub</a>'
 
 # Build settings
 markdown: kramdown
+livereload: true
 
 kramdown:
   input: GFM
@@ -30,5 +30,3 @@ kramdown:
 
 permalink: pretty
 # exclude: [vendor]
-
-

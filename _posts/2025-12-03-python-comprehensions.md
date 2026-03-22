@@ -3,7 +3,7 @@ layout:     post
 title:      Python Comprehensions (1/3)
 date:       2025-12-03 13:01
 summary:    Interesting comprehensions in python.
-categories: Python, Dictionaries, List comprehensions
+categories: Python Tutorial Comprehensions
 thumbnail: cogs
 published: true
 tags:
