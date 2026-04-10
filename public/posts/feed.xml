@@ -2,20 +2,20 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
 	<title>Posts</title>
 	<subtitle>Posts on software, systems, and life.</subtitle>
-	<link rel="self" type="application/atom+xml" href="https://alevis.github.io/posts/feed.xml"/>
-  <link rel="alternate" type="text/html" href="https://alevis.github.io/posts/"/>
+	<link rel="self" type="application/atom+xml" href="https://agabalevis.com/posts/feed.xml"/>
+  <link rel="alternate" type="text/html" href="https://agabalevis.com/posts/"/>
   
 	<updated>2026-04-10T00:00:00+00:00</updated>
 	
-	<id>https://alevis.github.io/posts/feed.xml</id>
+	<id>https://agabalevis.com/posts/feed.xml</id>
 	<entry xml:lang="en">
 		<title>apple turned Trash into a hostage situation.</title>
 		<published>2026-03-27T03:45:00+00:00</published>
 		<updated>2026-03-27T03:45:00+00:00</updated>
-		<link rel="alternate" type="text/html" href="https://alevis.github.io/posts/apple-trash-icloud-hostility/"/>
-		<id>https://alevis.github.io/posts/apple-trash-icloud-hostility/</id>
+		<link rel="alternate" type="text/html" href="https://agabalevis.com/posts/apple-trash-icloud-hostility/"/>
+		<id>https://agabalevis.com/posts/apple-trash-icloud-hostility/</id>
     
-		<content type="html" xml:base="https://alevis.github.io/posts/apple-trash-icloud-hostility/">&lt;h3 id=&quot;apple-turned-trash-into-a-hostage-situation&quot;&gt;Apple turned Trash into a hostage situation&lt;a class=&quot;zola-anchor&quot; href=&quot;#apple-turned-trash-into-a-hostage-situation&quot; aria-label=&quot;Anchor link for: apple-turned-trash-into-a-hostage-situation&quot; style=&quot;visibility: hidden;&quot;&gt;&lt;&#x2F;a&gt;
+		<content type="html" xml:base="https://agabalevis.com/posts/apple-trash-icloud-hostility/">&lt;h3 id=&quot;apple-turned-trash-into-a-hostage-situation&quot;&gt;Apple turned Trash into a hostage situation&lt;a class=&quot;zola-anchor&quot; href=&quot;#apple-turned-trash-into-a-hostage-situation&quot; aria-label=&quot;Anchor link for: apple-turned-trash-into-a-hostage-situation&quot; style=&quot;visibility: hidden;&quot;&gt;&lt;&#x2F;a&gt;
 &lt;&#x2F;h3&gt;
 &lt;p&gt;I tried to empty the Trash on a Mac. &lt;br&#x2F;&gt;
 That should have been the end of the story.&lt;br&#x2F;&gt;
@@ -135,10 +135,10 @@ What made it maddening was that Apple designed the system so that the user could
 		<title>ten things.</title>
 		<published>2026-03-21T10:00:00+00:00</published>
 		<updated>2026-03-21T10:00:00+00:00</updated>
-		<link rel="alternate" type="text/html" href="https://alevis.github.io/posts/ten-things/"/>
-		<id>https://alevis.github.io/posts/ten-things/</id>
+		<link rel="alternate" type="text/html" href="https://agabalevis.com/posts/ten-things/"/>
+		<id>https://agabalevis.com/posts/ten-things/</id>
     
-		<content type="html" xml:base="https://alevis.github.io/posts/ten-things/">&lt;h3 id=&quot;ten-things&quot;&gt;Ten Things&lt;a class=&quot;zola-anchor&quot; href=&quot;#ten-things&quot; aria-label=&quot;Anchor link for: ten-things&quot; style=&quot;visibility: hidden;&quot;&gt;&lt;&#x2F;a&gt;
+		<content type="html" xml:base="https://agabalevis.com/posts/ten-things/">&lt;h3 id=&quot;ten-things&quot;&gt;Ten Things&lt;a class=&quot;zola-anchor&quot; href=&quot;#ten-things&quot; aria-label=&quot;Anchor link for: ten-things&quot; style=&quot;visibility: hidden;&quot;&gt;&lt;&#x2F;a&gt;
 &lt;&#x2F;h3&gt;
 &lt;ol&gt;
 &lt;li&gt;Fear is a bigger obstacle than the obstacle itself.&lt;&#x2F;li&gt;
@@ -158,10 +158,10 @@ What made it maddening was that Apple designed the system so that the user could
 		<title>python comprehensions.</title>
 		<published>2025-12-03T13:01:00+00:00</published>
 		<updated>2025-12-03T13:01:00+00:00</updated>
-		<link rel="alternate" type="text/html" href="https://alevis.github.io/posts/python-comprehensions/"/>
-		<id>https://alevis.github.io/posts/python-comprehensions/</id>
+		<link rel="alternate" type="text/html" href="https://agabalevis.com/posts/python-comprehensions/"/>
+		<id>https://agabalevis.com/posts/python-comprehensions/</id>
     
-		<content type="html" xml:base="https://alevis.github.io/posts/python-comprehensions/">&lt;h2 id=&quot;what-is-a-list-comprehension&quot;&gt;What is a list comprehension;&lt;a class=&quot;zola-anchor&quot; href=&quot;#what-is-a-list-comprehension&quot; aria-label=&quot;Anchor link for: what-is-a-list-comprehension&quot; style=&quot;visibility: hidden;&quot;&gt;&lt;&#x2F;a&gt;
+		<content type="html" xml:base="https://agabalevis.com/posts/python-comprehensions/">&lt;h2 id=&quot;what-is-a-list-comprehension&quot;&gt;What is a list comprehension;&lt;a class=&quot;zola-anchor&quot; href=&quot;#what-is-a-list-comprehension&quot; aria-label=&quot;Anchor link for: what-is-a-list-comprehension&quot; style=&quot;visibility: hidden;&quot;&gt;&lt;&#x2F;a&gt;
 &lt;&#x2F;h2&gt;
 &lt;p&gt;According to &lt;code&gt;wikipedia&lt;&#x2F;code&gt; a list comprehension&lt;&#x2F;p&gt;
 &lt;blockquote&gt;
@@ -255,10 +255,10 @@ Ideally there should be a machine available for every user in the userlist.&lt;&
 		<title>the kramdown vulnerability.</title>
 		<published>2020-08-16T00:00:00+00:00</published>
 		<updated>2020-08-16T00:00:00+00:00</updated>
-		<link rel="alternate" type="text/html" href="https://alevis.github.io/posts/kramdown/"/>
-		<id>https://alevis.github.io/posts/kramdown/</id>
+		<link rel="alternate" type="text/html" href="https://agabalevis.com/posts/kramdown/"/>
+		<id>https://agabalevis.com/posts/kramdown/</id>
     
-		<content type="html" xml:base="https://alevis.github.io/posts/kramdown/">&lt;p&gt;We need to update &lt;code&gt;kramdown(1.17)&lt;&#x2F;code&gt; because of a critical vunerability;&lt;&#x2F;p&gt;
+		<content type="html" xml:base="https://agabalevis.com/posts/kramdown/">&lt;p&gt;We need to update &lt;code&gt;kramdown(1.17)&lt;&#x2F;code&gt; because of a critical vunerability;&lt;&#x2F;p&gt;
 &lt;p&gt;&lt;code&gt;$ bundle audit --update&lt;&#x2F;code&gt;&lt;&#x2F;p&gt;
 &lt;pre class=&quot;giallo z-code&quot;&gt;&lt;code data-lang=&quot;plain&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;Name: kramdown&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
 &lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;Version: 1.17.0&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
@@ -338,10 +338,10 @@ karmdown also allows &lt;code&gt;HTML&lt;&#x2F;code&gt; mixing;&lt;&#x2F;p&gt;
 		<title>fixing pylyrics.</title>
 		<published>2019-07-30T20:10:00+00:00</published>
 		<updated>2019-07-30T20:10:00+00:00</updated>
-		<link rel="alternate" type="text/html" href="https://alevis.github.io/posts/fixing-pylyrics/"/>
-		<id>https://alevis.github.io/posts/fixing-pylyrics/</id>
+		<link rel="alternate" type="text/html" href="https://agabalevis.com/posts/fixing-pylyrics/"/>
+		<id>https://agabalevis.com/posts/fixing-pylyrics/</id>
     
-		<content type="html" xml:base="https://alevis.github.io/posts/fixing-pylyrics/">&lt;p&gt;&lt;code&gt;PyLyrics&lt;&#x2F;code&gt; is a great package for retrieving lyrics.
+		<content type="html" xml:base="https://agabalevis.com/posts/fixing-pylyrics/">&lt;p&gt;&lt;code&gt;PyLyrics&lt;&#x2F;code&gt; is a great package for retrieving lyrics.
 It uses &lt;code&gt;BeautifulSoup&lt;&#x2F;code&gt; to scrape the lyrics from &lt;code&gt;lyrics.fandom.com&lt;&#x2F;code&gt;&lt;&#x2F;p&gt;
 &lt;p&gt;&lt;code&gt;BeautifulSoup&lt;&#x2F;code&gt; or &lt;code&gt;bs4&lt;&#x2F;code&gt; provides;&lt;&#x2F;p&gt;
 &lt;blockquote&gt;
@@ -443,10 +443,10 @@ The package was made for and tested only on &lt;code&gt;python3+&lt;&#x2F;code&g
 		<title>welcome to my blog.</title>
 		<published>2019-03-27T15:31:19+00:00</published>
 		<updated>2026-04-10T00:00:00+00:00</updated>
-		<link rel="alternate" type="text/html" href="https://alevis.github.io/posts/welcome-to-my-blog/"/>
-		<id>https://alevis.github.io/posts/welcome-to-my-blog/</id>
+		<link rel="alternate" type="text/html" href="https://agabalevis.com/posts/welcome-to-my-blog/"/>
+		<id>https://agabalevis.com/posts/welcome-to-my-blog/</id>
     
-		<content type="html" xml:base="https://alevis.github.io/posts/welcome-to-my-blog/">&lt;p&gt;Welcome to my blog.&lt;&#x2F;p&gt;
+		<content type="html" xml:base="https://agabalevis.com/posts/welcome-to-my-blog/">&lt;p&gt;Welcome to my blog.&lt;&#x2F;p&gt;
 &lt;p&gt;This site is where I write about software, systems, and the things I learn while building. It is also a place to think in public a bit: to turn rough ideas into clearer ones, to document mistakes worth remembering, and to leave behind notes that might be useful later.&lt;&#x2F;p&gt;
 &lt;p&gt;The current version of the site is built with Zola and the Serene theme. That matters less than the reason for rebuilding it: I wanted a simpler home for my writing, one that feels lighter, easier to maintain, and closer to how I want to work now.&lt;&#x2F;p&gt;
 &lt;p&gt;I expect most posts here to fall into a few broad buckets: practical software notes, reflections on engineering work, and occasional pieces on tools, bugs, or ideas that were worth slowing down for. Some posts will be technical. Some will be personal in the sense that they come from experience rather than theory. Ideally, all of them will be honest and useful.&lt;&#x2F;p&gt;

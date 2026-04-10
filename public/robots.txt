@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 Allow: /
-Sitemap: https://alevis.github.io/sitemap.xml
+Sitemap: https://agabalevis.com/sitemap.xml
