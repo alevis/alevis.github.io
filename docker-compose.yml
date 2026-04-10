@@ -1,31 +1,9 @@
 services:
-  blog:
-    build:
-      context: .
-      target: development
+  serene:
+    image: ghcr.io/getzola/zola:v0.22.1
+    working_dir: /site
+    command: serve --interface 0.0.0.0 --port 1111 --drafts --base-url http://localhost
     ports:
-      - "4000:4000"
+      - "1111:1111"
     volumes:
-      - .:/app
-      - bundle_cache:/usr/local/bundle
-    environment:
-      - JEKYLL_ENV=development
-    command: sh -c "bundle exec jekyll serve --host 0.0.0.0 --livereload --force_polling"
-    develop:
-      watch:
-        - path: .
-          action: rebuild
-
-  blog-production:
-    build:
-      context: .
-      target: production-serve
-    ports:
-      - "4001:4000"
-    environment:
-      - JEKYLL_ENV=production
-    profiles:
-      - production
-
-volumes:
-  bundle_cache:
+      - ./:/site
