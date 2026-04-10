@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light dark">
+  
+  
+    
+  
+  <meta name="description" content="A small bug resulted in the wrong error.">
+
+  <title>fixing pylyrics.</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="https://alevis.github.io/img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://alevis.github.io/img/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://alevis.github.io/img/apple-touch-icon.png">
+  
+  <style>
+
+  /* light mode colors */
+  body {
+    --primary-color: #5871a2;
+    --primary-pale-color: #5871a233;
+    --primary-decoration-color: #5871a210;
+    --bg-color: #ffffff;
+    --text-color: #2f3030;
+    --text-pale-color: #767676;
+    --text-decoration-color: #a9a9a9;
+    --highlight-mark-color: #5f75b020;
+
+    --callout-note-color: #5871a2;
+    --callout-tip-color: #268556;
+    --callout-important-color: #885fc9;
+    --callout-warning-color: #ab6632;
+    --callout-caution-color: #c64e4e;
+  }
+
+  /* dark mode colors */
+  body.dark {
+    --primary-color: #6f8fd1;
+    --primary-pale-color: #6f8fd166;
+    --primary-decoration-color: #6f8fd112;
+    --bg-color: #1c1c1c;
+    --text-color: #c1c1c1;
+    --text-pale-color: #848484;
+    --text-decoration-color: #5f5f5f;
+    --highlight-mark-color: #8296cb3b;
+
+    --callout-note-color: #6f8fd1;
+    --callout-tip-color: #47976f;
+    --callout-important-color: #9776cd;
+    --callout-warning-color: #ad7a52;
+    --callout-caution-color: #d06161;
+  }
+
+  /* typography */
+  body {
+    --main-font: ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+    --code-font: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+    --homepage-max-width: 768px;
+    --main-max-width: 768px;
+    --avatar-size: 60px;
+    --font-size: 16px;
+    --line-height: 1.75;
+    --img-border-radius: 0px;
+    --detail-border-radius: 0px;
+    --dark-mode-img-brightness: 0.75;
+    --dark-mode-chart-brightness: 0.75;
+    --inline-code-border-radius: 2px;
+    --inline-code-bg-color: var(--primary-decoration-color);
+    --block-code-border-radius: 0px;
+    --block-code-border-color: var(--primary-color);
+    --detail-border-color: var(--primary-color);
+  }
+
+</style>
+
+  <link rel="stylesheet" href="https://alevis.github.io/main.css">
+  
+
+<link id="hl" rel="stylesheet" type="text/css" href="/giallo-light.css" />
+
+
+
+  
+</head>
+
+<body class="post">
+  
+  <script>
+    const theme = sessionStorage.getItem('theme');
+    const match = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    if ((theme && theme == 'dark') || (!theme && match)) {
+      document.body.classList.add('dark');
+      const hl = document.querySelector('link#hl');
+      if (hl) hl.href = 'https://alevis.github.io/giallo-dark.css';
+    }
+  </script>
+  
+  
+<div id="wrapper">
+  <div id="blank"></div>
+  <aside>
+    
+    
+    <nav>
+      <ul>
+        
+        <li>
+          <a class="h2" href="#mulyrica">Mulyrica</a>
+          
+        </li>
+        
+        <li>
+          <a class="h2" href="#it-works">It works!</a>
+          
+          <ul>
+            
+            <li>
+              <a class="h3" href="#source-of-the-problem">Source of the problem</a>
+            </li>
+            
+            <li>
+              <a class="h3" href="#more-hunting">More hunting</a>
+            </li>
+            
+          </ul>
+          
+        </li>
+        
+      </ul>
+    </nav>
+    
+    
+    <button id="back-to-top" aria-label="back to top">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-up"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg>
+
+    </button>
+    
+  </aside>
+  <main>
+    
+<header>
+  <nav>
+    <a id="back-link" href="https:&#x2F;&#x2F;alevis.github.io&#x2F;posts">← Back</a>
+  </nav>
+</header>
+
+
+    <div>
+      
+      
+      
+      
+      <div id="copy-cfg" style="display: none;" data-copy-icon="&lt;svg xmlns=&quot;http:&#x2F;&#x2F;www.w3.org&#x2F;2000&#x2F;svg&quot; viewBox=&quot;0 0 24 24&quot; width=&quot;18&quot; height=&quot;18&quot;&gt;&lt;path d=&quot;M6.9998 6V3C6.9998 2.44772 7.44752 2 7.9998 2H19.9998C20.5521 2 20.9998 2.44772 20.9998 3V17C20.9998 17.5523 20.5521 18 19.9998 18H16.9998V20.9991C16.9998 21.5519 16.5499 22 15.993 22H4.00666C3.45059 22 3 21.5554 3 20.9991L3.0026 7.00087C3.0027 6.44811 3.45264 6 4.00942 6H6.9998ZM5.00242 8L5.00019 20H14.9998V8H5.00242ZM8.9998 6H16.9998V16H18.9998V4H8.9998V6Z&quot; fill=&quot;currentColor&quot;&gt;&lt;&#x2F;path&gt;&lt;&#x2F;svg&gt;
+" data-check-icon="&lt;svg xmlns=&quot;http:&#x2F;&#x2F;www.w3.org&#x2F;2000&#x2F;svg&quot; viewBox=&quot;0 0 24 24&quot; width=&quot;18&quot; height=&quot;18&quot;&gt;&lt;path d=&quot;M10.0007 15.1709L19.1931 5.97852L20.6073 7.39273L10.0007 17.9993L3.63672 11.6354L5.05093 10.2212L10.0007 15.1709Z&quot; fill=&quot;currentColor&quot;&gt;&lt;&#x2F;path&gt;&lt;&#x2F;svg&gt;
+"></div>
+      
+      <article class="prose">
+        <h1>fixing pylyrics.</h1>
+        <div id="post-info">
+          <div id="date">
+            <span id="publish">Jul 30, 2019</span>
+            </div>
+
+          
+          <div id="tags">
+            <a class="instant" href="https://alevis.github.io/tags/bug"><span>#</span>bug</a><a class="instant" href="https://alevis.github.io/tags/error"><span>#</span>error</a><a class="instant" href="https://alevis.github.io/tags/python"><span>#</span>python</a><a class="instant" href="https://alevis.github.io/tags/package"><span>#</span>package</a><a class="instant" href="https://alevis.github.io/tags/flask"><span>#</span>flask</a>
+          </div>
+          
+        </div>
+
+        
+        
+
+        
+
+        <p><code>PyLyrics</code> is a great package for retrieving lyrics.
+It uses <code>BeautifulSoup</code> to scrape the lyrics from <code>lyrics.fandom.com</code></p>
+<p><code>BeautifulSoup</code> or <code>bs4</code> provides;</p>
+<blockquote>
+<p>Python idioms for iterating, searching, and modifying the parse tree.</p>
+</blockquote>
+<p>See <a rel="nofollow noreferrer external" href="https://pypi.org/project/beautifulsoup4/">here</a> for more information.</p>
+<h3 id="mulyrica">Mulyrica<a class="zola-anchor" href="#mulyrica" aria-label="Anchor link for: mulyrica" style="visibility: hidden;"></a>
+</h3>
+<p><code>PyLyrics</code> is a central part of <code>Mulyrica</code>, my lyrics search/sentiment analysis app. I was pretty disappointed when it did not work for some queries.
+I thought this was a parsing error but upon inspection, it turned out to be something else entirely.</p>
+<h3 id="it-works">It works!<a class="zola-anchor" href="#it-works" aria-label="Anchor link for: it-works" style="visibility: hidden;"></a>
+</h3>
+<p><code>PyLyrics</code> worked until I tested it on a few songs.
+It returned the following error;</p>
+<pre class="giallo z-code"><code data-lang="plain"><span class="giallo-l"><span>ValueError: Song or Singer does not exist or the API does not have the lyrics</span></span></code></pre>
+<p>I checked the website but the lyrics were there.
+So I opened up a debug session to investigate and find out where the error was being thrown.</p>
+<h4 id="source-of-the-problem">Source of the <strong>problem</strong><a class="zola-anchor" href="#source-of-the-problem" aria-label="Anchor link for: source-of-the-problem" style="visibility: hidden;"></a>
+</h4>
+<pre class="giallo z-code"><code data-lang="python"><span class="giallo-l"><span class="z-entity z-name">  @</span><span class="z-support">staticmethod</span></span>
+<span class="giallo-l"><span class="z-storage z-type">  def</span><span class="z-entity z-name"> getLyrics</span><span>(</span><span class="z-variable z-parameter z-function">singer</span><span>,</span><span class="z-variable z-parameter z-function"> song</span><span>)</span><span>:</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-comment">    #</span><span class="z-comment">Replace spaces with _</span></span>
+<span class="giallo-l"><span>    singer</span><span class="z-keyword"> =</span><span> singer</span><span>.</span><span>replace</span><span>(</span><span class="z-punctuation z-definition z-string">&#39;</span><span class="z-punctuation z-definition z-string"> &#39;</span><span>,</span><span class="z-punctuation z-definition z-string"> &#39;</span><span class="z-string">_</span><span class="z-punctuation z-definition z-string">&#39;</span><span>)</span></span>
+<span class="giallo-l"><span>    song</span><span class="z-keyword"> =</span><span> song</span><span>.</span><span>replace</span><span>(</span><span class="z-punctuation z-definition z-string">&#39;</span><span class="z-punctuation z-definition z-string"> &#39;</span><span>,</span><span class="z-punctuation z-definition z-string"> &#39;</span><span class="z-string">_</span><span class="z-punctuation z-definition z-string">&#39;</span><span>)</span></span>
+<span class="giallo-l"><span>    r</span><span class="z-keyword"> =</span><span> requests</span><span>.</span><span>get</span><span>(</span><span class="z-punctuation z-definition z-string">&#39;</span><span class="z-string">http://lyrics.wikia.com/</span><span class="z-constant">{0}</span><span class="z-string">:</span><span class="z-constant">{1}</span><span class="z-punctuation z-definition z-string">&#39;</span><span>.</span><span>format</span><span>(</span><span>singer</span><span>,</span><span>song</span><span>)</span><span>)</span></span>
+<span class="giallo-l"><span>    s</span><span class="z-keyword"> =</span><span> BeautifulSoup</span><span>(</span><span>r</span><span>.</span><span>text</span><span>)</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-comment">    #</span><span class="z-comment">Get main lyrics holder</span></span>
+<span class="giallo-l"><span>    lyrics</span><span class="z-keyword"> =</span><span> s</span><span>.</span><span>find</span><span>(</span><span class="z-punctuation z-definition z-string">&quot;</span><span class="z-string">div</span><span class="z-punctuation z-definition z-string">&quot;</span><span>,</span><span>{</span><span class="z-punctuation z-definition z-string">&#39;</span><span class="z-string">class</span><span class="z-punctuation z-definition z-string">&#39;</span><span>:</span><span class="z-punctuation z-definition z-string">&#39;</span><span class="z-string">lyricbox</span><span class="z-punctuation z-definition z-string">&#39;</span><span>}</span><span>)</span></span>
+<span class="giallo-l"><span class="z-keyword">    if</span><span> lyrics</span><span class="z-keyword"> is</span><span class="z-constant"> None</span><span>:</span></span>
+<span class="giallo-l"><span class="z-keyword">      raise</span><span class="z-support"> ValueError</span><span>(</span><span class="z-punctuation z-definition z-string">&quot;</span><span class="z-string">Song or Singer does not exist or the API does not have Lyrics</span><span class="z-punctuation z-definition z-string">&quot;</span><span>)</span></span>
+<span class="giallo-l"><span class="z-keyword">      return</span><span class="z-constant"> None</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-comment">    #</span><span class="z-comment">Remove Scripts</span></span>
+<span class="giallo-l"><span>    [</span><span>s</span><span>.</span><span>extract</span><span>(</span><span>)</span><span class="z-keyword"> for</span><span> s</span><span class="z-keyword"> in</span><span> lyrics</span><span>(</span><span class="z-punctuation z-definition z-string">&#39;</span><span class="z-string">script</span><span class="z-punctuation z-definition z-string">&#39;</span><span>)</span><span>]</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-comment">    #</span><span class="z-comment">Remove Comments</span></span>
+<span class="giallo-l"><span>    comments</span><span class="z-keyword"> =</span><span> lyrics</span><span>.</span><span>findAll</span><span>(</span><span class="z-variable">text</span><span class="z-keyword">=</span><span class="z-storage z-type">lambda</span><span class="z-variable z-parameter z-function"> text</span><span>:</span><span class="z-support">isinstance</span><span>(</span><span>text</span><span>,</span><span> Comment</span><span>)</span><span>)</span></span>
+<span class="giallo-l"><span>    [</span><span>comment</span><span>.</span><span>extract</span><span>(</span><span>)</span><span class="z-keyword"> for</span><span> comment</span><span class="z-keyword"> in</span><span> comments</span><span>]</span><span>    </span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-comment">    #</span><span class="z-comment">Remove unecessary tags</span></span>
+<span class="giallo-l"><span class="z-keyword">    for</span><span> tag</span><span class="z-keyword"> in</span><span> [</span><span class="z-punctuation z-definition z-string">&#39;</span><span class="z-string">div</span><span class="z-punctuation z-definition z-string">&#39;</span><span>,</span><span class="z-punctuation z-definition z-string">&#39;</span><span class="z-string">i</span><span class="z-punctuation z-definition z-string">&#39;</span><span>,</span><span class="z-punctuation z-definition z-string">&#39;</span><span class="z-string">b</span><span class="z-punctuation z-definition z-string">&#39;</span><span>,</span><span class="z-punctuation z-definition z-string">&#39;</span><span class="z-string">a</span><span class="z-punctuation z-definition z-string">&#39;</span><span>]</span><span>:</span></span>
+<span class="giallo-l"><span class="z-keyword">      for</span><span> match</span><span class="z-keyword"> in</span><span> lyrics</span><span>.</span><span>findAll</span><span>(</span><span>tag</span><span>)</span><span>:</span></span>
+<span class="giallo-l"><span>        match</span><span>.</span><span>replaceWithChildren</span><span>(</span><span>)</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-comment">    #</span><span class="z-comment">Get output as a string and remove non unicode characters and replace &lt;br&gt; with newlines</span></span>
+<span class="giallo-l"><span>    output</span><span class="z-keyword"> =</span><span class="z-support"> str</span><span>(</span><span>lyrics</span><span>)</span><span>.</span><span>encode</span><span>(</span><span class="z-punctuation z-definition z-string">&#39;</span><span class="z-string">utf-8</span><span class="z-punctuation z-definition z-string">&#39;</span><span>,</span><span class="z-variable"> errors</span><span class="z-keyword">=</span><span class="z-punctuation z-definition z-string">&#39;</span><span class="z-string">replace</span><span class="z-punctuation z-definition z-string">&#39;</span><span>)</span><span>[</span><span class="z-constant">22</span><span>:</span><span class="z-keyword">-</span><span class="z-constant">6</span><span>:</span><span>]</span><span>.</span><span>decode</span><span>(</span><span class="z-punctuation z-definition z-string">&quot;</span><span class="z-string">utf-8</span><span class="z-punctuation z-definition z-string">&quot;</span><span>)</span><span>.</span><span>replace</span><span>(</span><span class="z-punctuation z-definition z-string">&#39;</span><span class="z-constant">\n</span><span class="z-punctuation z-definition z-string">&#39;</span><span>,</span><span class="z-punctuation z-definition z-string">&#39;</span><span class="z-punctuation z-definition z-string">&#39;</span><span>)</span><span>.</span><span>replace</span><span class="z-punctuation z-definition z-string">&#39;</span><span class="z-string">&lt;br/&gt;</span><span class="z-punctuation z-definition z-string">&#39;</span><span>,</span><span class="z-punctuation z-definition z-string">&#39;</span><span class="z-constant">\n</span><span class="z-punctuation z-definition z-string">&#39;</span><span>)</span></span>
+<span class="giallo-l"><span class="z-keyword">    try</span><span>:</span></span>
+<span class="giallo-l"><span class="z-keyword">      return</span><span> output</span></span>
+<span class="giallo-l"><span class="z-keyword">    except</span><span>:</span></span>
+<span class="giallo-l"><span class="z-keyword">      return</span><span> output</span><span>.</span><span>encode</span><span>(</span><span class="z-punctuation z-definition z-string">&#39;</span><span class="z-string">utf-8</span><span class="z-punctuation z-definition z-string">&#39;</span><span>)</span></span></code></pre>
+<p>specifically</p>
+<pre class="giallo z-code"><code data-lang="python"><span class="giallo-l"><span class="z-keyword">  if</span><span> lyrics</span><span class="z-keyword"> is</span><span class="z-constant"> None</span><span>:</span></span>
+<span class="giallo-l"><span class="z-keyword">    raise</span><span class="z-support"> ValueError</span><span>(</span><span class="z-punctuation z-definition z-string">&quot;</span><span class="z-string">Song or Singer does not exist or the API does not have Lyrics</span><span class="z-punctuation z-definition z-string">&quot;</span><span>)</span></span>
+<span class="giallo-l"><span class="z-keyword">    return</span><span class="z-constant"> None</span></span></code></pre>
+<p>I quickly did a <code>print lyrics</code> and sure enough they showed up in the debugging shell running in my browser
+so the problem was further down.</p>
+<h4 id="more-hunting">More <strong>hunting</strong><a class="zola-anchor" href="#more-hunting" aria-label="Anchor link for: more-hunting" style="visibility: hidden;"></a>
+</h4>
+<pre class="giallo z-code"><code data-lang="python"><span class="giallo-l"><span>		artist</span><span class="z-keyword"> =</span><span> form</span><span>.</span><span>artist</span><span>.</span><span>data</span></span>
+<span class="giallo-l"><span>		song</span><span class="z-keyword"> =</span><span> form</span><span>.</span><span>song</span><span>.</span><span>data</span></span>
+<span class="giallo-l"><span>		lyrics</span><span class="z-keyword"> =</span><span> PyLyrics</span><span>.</span><span>getLyrics</span><span>(</span><span>artist</span><span>,</span><span> song</span><span>)</span></span></code></pre>
+<p>This time I got the following error;</p>
+<pre class="giallo z-code"><code data-lang="python"><span class="giallo-l"><span class="z-support">		ascii</span><span> code</span><span> can</span><span class="z-punctuation z-definition z-string">&#39;</span><span class="z-string">t decode byte 0xc3 in position 1245: ordinal not in range(128) in file</span></span>
+<span class="giallo-l"><span class="z-keyword">		/</span><span>venv</span><span class="z-keyword">/</span><span>lib</span><span class="z-keyword">/</span><span>python2</span><span class="z-keyword">/</span><span>site</span><span class="z-keyword">/</span><span>packages</span><span class="z-keyword">/</span><span>functions</span><span>.</span><span>py</span></span></code></pre>
+<p>That was on line <code>96</code> in <code>functions.py</code> under <code>getLyrics(singer,song)</code></p>
+<pre class="giallo z-code"><code data-lang="python"><span class="giallo-l"><span class="z-punctuation z-definition z-comment">		#</span><span class="z-comment">Remove unecessary tags</span></span>
+<span class="giallo-l"><span class="z-keyword">		for</span><span> tag</span><span class="z-keyword"> in</span><span> [</span><span class="z-punctuation z-definition z-string">&#39;</span><span class="z-string">div</span><span class="z-punctuation z-definition z-string">&#39;</span><span>,</span><span class="z-punctuation z-definition z-string">&#39;</span><span class="z-string">i</span><span class="z-punctuation z-definition z-string">&#39;</span><span>,</span><span class="z-punctuation z-definition z-string">&#39;</span><span class="z-string">b</span><span class="z-punctuation z-definition z-string">&#39;</span><span>,</span><span class="z-punctuation z-definition z-string">&#39;</span><span class="z-string">a</span><span class="z-punctuation z-definition z-string">&#39;</span><span>]</span><span>:</span></span>
+<span class="giallo-l"><span class="z-keyword">			for</span><span> match</span><span class="z-keyword"> in</span><span> lyrics</span><span>.</span><span>findAll</span><span>(</span><span>tag</span><span>)</span><span>:</span></span>
+<span class="giallo-l"><span>				match</span><span>.</span><span>replaceWithChildren</span><span>(</span><span>)</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-comment">		#</span><span class="z-comment">Get output as a string and remove non unicode characters and replace &lt;br&gt; with newlines</span></span>
+<span class="giallo-l"><span>		output</span><span class="z-keyword"> =</span><span class="z-support"> str</span><span>(</span><span>lyrics</span><span>)</span><span>.</span><span>encode</span><span>(</span><span class="z-punctuation z-definition z-string">&#39;</span><span class="z-string">utf-8</span><span class="z-punctuation z-definition z-string">&#39;</span><span>,</span><span class="z-variable"> errors</span><span class="z-keyword">=</span><span class="z-punctuation z-definition z-string">&#39;</span><span class="z-string">replace</span><span class="z-punctuation z-definition z-string">&#39;</span><span>)</span><span>[</span><span class="z-constant">22</span><span>:</span><span class="z-keyword">-</span><span class="z-constant">6</span><span>:</span><span>]</span><span>.</span><span>decode</span><span>(</span><span class="z-punctuation z-definition z-string">&quot;</span><span class="z-string">utf-8</span><span class="z-punctuation z-definition z-string">&quot;</span><span>)</span><span>.</span><span>replace</span><span>(</span><span class="z-punctuation z-definition z-string">&#39;</span><span class="z-constant">\n</span><span class="z-punctuation z-definition z-string">&#39;</span><span>,</span><span class="z-punctuation z-definition z-string">&#39;</span><span class="z-punctuation z-definition z-string">&#39;</span><span>)</span><span>.</span><span>replace</span><span>(</span><span class="z-punctuation z-definition z-string">&#39;</span><span class="z-string">&lt;br/&gt;</span><span class="z-punctuation z-definition z-string">&#39;</span><span>,</span><span class="z-punctuation z-definition z-string">&#39;</span><span class="z-constant">\n</span><span class="z-punctuation z-definition z-string">&#39;</span><span>)</span></span>
+<span class="giallo-l"><span class="z-keyword">		try</span><span>:</span></span>
+<span class="giallo-l"><span class="z-keyword">			return</span><span> output</span></span>
+<span class="giallo-l"><span class="z-keyword">		except</span><span>:</span></span>
+<span class="giallo-l"><span class="z-keyword">			return</span><span> output</span><span>.</span><span>encode</span><span>(</span><span class="z-punctuation z-definition z-string">&quot;</span><span class="z-string">utf-8</span><span class="z-punctuation z-definition z-string">&quot;</span><span>)</span></span></code></pre>
+<p>I thought <code>encoding</code> the lyrics twice didn't make sense so I removed call to the encoding method;</p>
+<pre class="giallo z-code"><code data-lang="python"><span class="giallo-l"><span>		output</span><span class="z-keyword"> =</span><span class="z-support"> str</span><span>(</span><span>lyrics</span><span>)</span><span>.</span><span>encode</span><span>(</span><span class="z-punctuation z-definition z-string">&#39;</span><span class="z-string">utf-8</span><span class="z-punctuation z-definition z-string">&#39;</span><span>,</span><span class="z-variable"> errors</span><span class="z-keyword">=</span><span class="z-punctuation z-definition z-string">&#39;</span><span class="z-string">replace</span><span class="z-punctuation z-definition z-string">&#39;</span><span>)</span><span>[</span><span class="z-constant">22</span><span>:</span><span class="z-keyword">-</span><span class="z-constant">6</span><span>:</span><span>]</span><span>.</span><span>decode</span><span>(</span><span class="z-punctuation z-definition z-string">&quot;</span><span class="z-string">utf-8</span><span class="z-punctuation z-definition z-string">&quot;</span><span>)</span><span>.</span><span>replace</span><span>(</span><span class="z-punctuation z-definition z-string">&#39;</span><span class="z-constant">\n</span><span class="z-punctuation z-definition z-string">&#39;</span><span>,</span><span class="z-punctuation z-definition z-string">&#39;</span><span class="z-punctuation z-definition z-string">&#39;</span><span>)</span><span>.</span><span>replace</span><span>(</span><span class="z-punctuation z-definition z-string">&#39;</span><span class="z-string">&lt;br/&gt;</span><span class="z-punctuation z-definition z-string">&#39;</span><span>,</span><span class="z-punctuation z-definition z-string">&#39;</span><span class="z-constant">\n</span><span class="z-punctuation z-definition z-string">&#39;</span><span>)</span></span></code></pre>
+<p>New code;</p>
+<pre class="giallo z-code"><code data-lang="python"><span class="giallo-l"><span>		output</span><span class="z-keyword"> =</span><span class="z-support"> str</span><span>(</span><span>lyrics</span><span>)</span><span>[</span><span class="z-constant">22</span><span>:</span><span class="z-keyword">-</span><span class="z-constant">6</span><span>:</span><span>]</span><span>.</span><span>decode</span><span>(</span><span class="z-punctuation z-definition z-string">&quot;</span><span class="z-string">utf-8</span><span class="z-punctuation z-definition z-string">&quot;</span><span>)</span><span>.</span><span>replace</span><span>(</span><span class="z-punctuation z-definition z-string">&#39;</span><span class="z-constant">\n</span><span class="z-punctuation z-definition z-string">&#39;</span><span>,</span><span class="z-punctuation z-definition z-string">&#39;</span><span class="z-punctuation z-definition z-string">&#39;</span><span>)</span><span>.</span><span>replace</span><span>(</span><span class="z-punctuation z-definition z-string">&#39;</span><span class="z-string">&lt;br/&gt;</span><span class="z-punctuation z-definition z-string">&#39;</span><span>,</span><span class="z-punctuation z-definition z-string">&#39;</span><span class="z-constant">\n</span><span class="z-punctuation z-definition z-string">&#39;</span><span>)</span></span></code></pre>
+<p>Saved the script and restarted the <code>flask app</code> again.
+I now had a situation were queries that had caused problems before were working and a few of
+previously error-free queries were suddenly not working.</p>
+<p>Curiously, I tried running all queries under two environments, one used <code>python2.7</code> the other
+used <code>python3.5</code>.</p>
+<p>It was then that I realized that this was a matter of different versions of python.
+The package was made for and tested only on <code>python3+</code></p>
+<p>I quickly seperated what worked for <code>python3</code> from what workd for <code>python2</code> and everything finally worked.</p>
+<pre class="giallo z-code"><code data-lang="python"><span class="giallo-l"><span class="z-punctuation z-definition z-comment">  #</span><span class="z-comment">Python 3</span></span>
+<span class="giallo-l"><span class="z-keyword">  if</span><span> sys</span><span>.</span><span>version_info</span><span>.</span><span>major</span><span class="z-keyword"> &gt;</span><span class="z-constant"> 2</span><span>:</span></span>
+<span class="giallo-l"><span>    output</span><span class="z-keyword"> =</span><span class="z-support"> str</span><span>(</span><span>lyrics</span><span>)</span><span>.</span><span>encode</span><span>(</span><span class="z-punctuation z-definition z-string">&#39;</span><span class="z-string">utf-8</span><span class="z-punctuation z-definition z-string">&#39;</span><span>,</span><span class="z-variable"> errors</span><span class="z-keyword">=</span><span class="z-punctuation z-definition z-string">&#39;</span><span class="z-string">replace</span><span class="z-punctuation z-definition z-string">&#39;</span><span>)</span><span>[</span><span class="z-constant">22</span><span>:</span><span class="z-keyword">-</span><span class="z-constant">6</span><span>:</span><span>]</span><span>.</span><span>\</span></span>
+<span class="giallo-l"><span>        decode</span><span>(</span><span class="z-punctuation z-definition z-string">&quot;</span><span class="z-string">utf-8</span><span class="z-punctuation z-definition z-string">&quot;</span><span>)</span><span>.</span><span>replace</span><span>(</span><span class="z-punctuation z-definition z-string">&#39;</span><span class="z-constant">\n</span><span class="z-punctuation z-definition z-string">&#39;</span><span>,</span><span class="z-punctuation z-definition z-string">&#39;</span><span class="z-punctuation z-definition z-string">&#39;</span><span>)</span><span>.</span><span>replace</span><span>(</span><span class="z-punctuation z-definition z-string">&#39;</span><span class="z-string">&lt;br/&gt;</span><span class="z-punctuation z-definition z-string">&#39;</span><span>,</span><span class="z-punctuation z-definition z-string">&#39;</span><span class="z-constant">\n</span><span class="z-punctuation z-definition z-string">&#39;</span><span>)</span></span>
+<span class="giallo-l"><span class="z-keyword">  else</span><span>:</span><span class="z-punctuation z-definition z-comment"> #</span><span class="z-comment"> Python 2</span></span>
+<span class="giallo-l"><span>    output</span><span class="z-keyword"> =</span><span class="z-support"> str</span><span>(</span><span>lyrics</span><span>)</span><span>[</span><span class="z-constant">22</span><span>:</span><span class="z-keyword">-</span><span class="z-constant">6</span><span>:</span><span>]</span><span>.</span><span>decode</span><span>(</span><span class="z-punctuation z-definition z-string">&quot;</span><span class="z-string">utf-8</span><span class="z-punctuation z-definition z-string">&quot;</span><span>)</span><span>.</span><span>replace</span><span>(</span><span class="z-punctuation z-definition z-string">&#39;</span><span class="z-constant">\n</span><span class="z-punctuation z-definition z-string">&#39;</span><span>,</span><span class="z-punctuation z-definition z-string">&#39;</span><span class="z-punctuation z-definition z-string">&#39;</span><span>)</span><span>.</span><span>\</span></span>
+<span class="giallo-l"><span>        replace</span><span>(</span><span class="z-punctuation z-definition z-string">&#39;</span><span class="z-string">&lt;br/&gt;</span><span class="z-punctuation z-definition z-string">&#39;</span><span>,</span><span class="z-punctuation z-definition z-string">&#39;</span><span class="z-constant">\n</span><span class="z-punctuation z-definition z-string">&#39;</span><span>)</span></span>
+<span class="giallo-l"><span class="z-keyword">  try</span><span>:</span></span>
+<span class="giallo-l"><span class="z-keyword">    return</span><span> [</span><span>album</span><span>,</span><span> output</span><span>]</span></span>
+<span class="giallo-l"><span class="z-keyword">  except</span><span>:</span></span>
+<span class="giallo-l"><span class="z-keyword">    return</span><span> [</span><span>album</span><span>,</span><span> output</span><span>.</span><span>encode</span><span>(</span><span class="z-punctuation z-definition z-string">&#39;</span><span class="z-string">utf-8</span><span class="z-punctuation z-definition z-string">&#39;</span><span>)</span><span>]</span></span></code></pre>
+<p>Happy <em>pythoning</em>.</p>
+
+      </article>
+
+      
+      
+
+      
+      
+    </div>
+
+    
+
+
+<footer>
+  <div class="left">
+    <div class="copyright">
+      © 2026 Levis Agaba
+      
+      <span>|</span>
+      Built with <a href="https://www.getzola.org" rel="noreferrer" target="_blank">zola</a> and <a href="https://github.com/isunjn/serene" rel="noreferrer" target="_blank">serene</a>
+      
+    </div>
+  </div>
+
+  <div class="right">
+    
+    
+      
+    
+    
+    <a id="rss-btn" href="https://alevis.github.io/posts/feed.xml">RSS</a>
+    
+    
+
+    
+    
+    
+    <button id="theme-toggle" aria-label="theme switch">
+      <span class="moon-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18"><path d="M10 7C10 10.866 13.134 14 17 14C18.9584 14 20.729 13.1957 21.9995 11.8995C22 11.933 22 11.9665 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C12.0335 2 12.067 2 12.1005 2.00049C10.8043 3.27098 10 5.04157 10 7ZM4 12C4 16.4183 7.58172 20 12 20C15.0583 20 17.7158 18.2839 19.062 15.7621C18.3945 15.9187 17.7035 16 17 16C12.0294 16 8 11.9706 8 7C8 6.29648 8.08133 5.60547 8.2379 4.938C5.71611 6.28423 4 8.9417 4 12Z" fill="currentColor"></path></svg>
+</span>
+      <span class="sun-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18"><path d="M12 18C8.68629 18 6 15.3137 6 12C6 8.68629 8.68629 6 12 6C15.3137 6 18 8.68629 18 12C18 15.3137 15.3137 18 12 18ZM12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16ZM11 1H13V4H11V1ZM11 20H13V23H11V20ZM3.51472 4.92893L4.92893 3.51472L7.05025 5.63604L5.63604 7.05025L3.51472 4.92893ZM16.9497 18.364L18.364 16.9497L20.4853 19.0711L19.0711 20.4853L16.9497 18.364ZM19.0711 3.51472L20.4853 4.92893L18.364 7.05025L16.9497 5.63604L19.0711 3.51472ZM5.63604 16.9497L7.05025 18.364L4.92893 20.4853L3.51472 19.0711L5.63604 16.9497ZM23 11V13H20V11H23ZM4 11V13H1V11H4Z" fill="currentColor"></path></svg>
+</span>
+    </button>
+    
+  </div>
+</footer>
+
+
+
+
+<dialog id="rss-mask">
+  <div>
+    <a href="https:&#x2F;&#x2F;alevis.github.io&#x2F;posts&#x2F;feed.xml">https:&#x2F;&#x2F;alevis.github.io&#x2F;posts&#x2F;feed.xml</a>
+    
+    
+    <button autofocus aria-label="copy" data-link="https:&#x2F;&#x2F;alevis.github.io&#x2F;posts&#x2F;feed.xml" data-copy-icon="&lt;svg xmlns=&quot;http:&#x2F;&#x2F;www.w3.org&#x2F;2000&#x2F;svg&quot; viewBox=&quot;0 0 24 24&quot; width=&quot;18&quot; height=&quot;18&quot;&gt;&lt;path d=&quot;M6.9998 6V3C6.9998 2.44772 7.44752 2 7.9998 2H19.9998C20.5521 2 20.9998 2.44772 20.9998 3V17C20.9998 17.5523 20.5521 18 19.9998 18H16.9998V20.9991C16.9998 21.5519 16.5499 22 15.993 22H4.00666C3.45059 22 3 21.5554 3 20.9991L3.0026 7.00087C3.0027 6.44811 3.45264 6 4.00942 6H6.9998ZM5.00242 8L5.00019 20H14.9998V8H5.00242ZM8.9998 6H16.9998V16H18.9998V4H8.9998V6Z&quot; fill=&quot;currentColor&quot;&gt;&lt;&#x2F;path&gt;&lt;&#x2F;svg&gt;
+" data-check-icon="&lt;svg xmlns=&quot;http:&#x2F;&#x2F;www.w3.org&#x2F;2000&#x2F;svg&quot; viewBox=&quot;0 0 24 24&quot; width=&quot;18&quot; height=&quot;18&quot;&gt;&lt;path d=&quot;M10.0007 15.1709L19.1931 5.97852L20.6073 7.39273L10.0007 17.9993L3.63672 11.6354L5.05093 10.2212L10.0007 15.1709Z&quot; fill=&quot;currentColor&quot;&gt;&lt;&#x2F;path&gt;&lt;&#x2F;svg&gt;
+" >
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18"><path d="M6.9998 6V3C6.9998 2.44772 7.44752 2 7.9998 2H19.9998C20.5521 2 20.9998 2.44772 20.9998 3V17C20.9998 17.5523 20.5521 18 19.9998 18H16.9998V20.9991C16.9998 21.5519 16.5499 22 15.993 22H4.00666C3.45059 22 3 21.5554 3 20.9991L3.0026 7.00087C3.0027 6.44811 3.45264 6 4.00942 6H6.9998ZM5.00242 8L5.00019 20H14.9998V8H5.00242ZM8.9998 6H16.9998V16H18.9998V4H8.9998V6Z" fill="currentColor"></path></svg>
+
+    </button>
+  </div>
+</dialog>
+
+
+
+  </main>
+</div>
+
+  
+<script src="/js/lightense.min.js"></script>
+
+
+  <script src="https://alevis.github.io/js/main.js"></script>
+</body>
+
+</html>
