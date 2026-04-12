@@ -57,6 +57,10 @@ a:focus-visible {
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 .prose {
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--heading-font);
+  }
+
   h1 {
     font-size: 1.15em;
     font-weight: bolder;
@@ -91,6 +95,7 @@ a:focus-visible {
   }
 
   p {
+    font-family: 'Gentium Book Plus', serif;
     font-size: 1em;
     line-height: inherit;
     word-wrap: break-word;
@@ -131,6 +136,7 @@ a:focus-visible {
   }
 
   blockquote {
+    font-family: 'Moon Dance', cursive;
     border-left: 1.5px var(--text-decoration-color) solid;
     padding-left: 16px;
     margin: 1em 0;
@@ -186,7 +192,7 @@ a:focus-visible {
     background-color: var(--text-decoration-color);
     opacity: 0.25;
     height: 2px;
-    margin: 3em 0;
+    margin: 1em 0;
   }
 
   table {
@@ -206,13 +212,18 @@ a:focus-visible {
   }
 
   :not(pre) > code {
-    font-family: var(--code-font);
+    font-family: var(--blog-code-font);
     font-size: 0.85em;
     padding: 1px 6px;
     color: var(--primary-color);
     background-color: var(--inline-code-bg-color);
     border-radius: var(--inline-code-border-radius);
     word-wrap: break-word;
+  }
+
+  body.dark :not(pre) > code {
+    background-color: var(--inline-code-bg-color);
+    color: var(--code-text-color);
   }
 
   pre {
@@ -226,7 +237,7 @@ a:focus-visible {
     overflow: auto;
 
     code {
-      font-family: var(--code-font);
+      font-family: var(--blog-code-font);
     }
 
     .giallo-ln {
@@ -1177,6 +1188,7 @@ header {
 .section-title {
   padding: 0 15px;
   h1 {
+    font-family: var(--heading-font);
     font-size: 1.15em;
     margin: 1.5em 0 0.75em;
   }
@@ -1694,6 +1706,15 @@ hr {
 pre {
   font-family: monospace, monospace;
   font-size: 1em;
+}
+
+body.dark pre {
+  background-color: var(--code-bg-color);
+  border-color: var(--code-border-color);
+  
+  code {
+    color: var(--code-text-color);
+  }
 }
 
 a {

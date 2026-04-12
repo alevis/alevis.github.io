@@ -13,7 +13,9 @@
   <link rel="icon" type="image/png" sizes="32x32" href="https://agabalevis.com/img/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="https://agabalevis.com/img/favicon-16x16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="https://agabalevis.com/img/apple-touch-icon.png">
-  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,200..900;1,200..900&family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Fira+Code:wght@300..700&family=Fira+Mono:wght@400;500;700&family=Gentium+Book+Plus:ital,wght@0,400;0,700;1,400;1,700&family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Merienda:wght@300..900&family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Milonga&family=Moon+Dance&family=Overpass+Mono:wght@300..700&family=PT+Mono&family=Rubik:ital,wght@0,300..900;1,300..900&family=Outfit:wght&display=swap" rel="stylesheet">
   <style>
 
   /* light mode colors */
@@ -56,6 +58,41 @@
   body {
     --main-font: ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
     --code-font: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+    
+    --default-heading-font: 'Merriweather Sans', sans-serif;
+    --default-body-font: 'Crimson Text', serif;
+    --default-blockquote-font: 'Merienda', cursive;
+    --default-code-font: 'Google Sans Code', monospace;
+
+    --literary-heading-font: 'PT Sans', sans-serif;
+    --literary-body-font: 'Gentium Book Plus', serif;
+    --literary-blockquote-font: 'Moon Dance', cursive;
+    --literary-code-font: 'PT Mono', monospace;
+
+    --modern-heading-font: 'Outfit', sans-serif;
+    --modern-body-font: 'Crimson Pro', serif;
+    --modern-blockquote-font: 'Moon Dance', cursive;
+    --modern-code-font: 'Fira Mono', monospace;
+
+    --classic-heading-font: 'Lato', sans-serif;
+    --classic-body-font: 'Gentium Book Plus', serif;
+    --classic-blockquote-font: 'Moon Dance', cursive;
+    --classic-code-font: 'Overpass Mono', monospace;
+
+    /* Blog post font variables */
+    --heading-font: var(--modern-heading-font);
+    --body-font: var(--modern-body-font);
+    --blockquote-font: var(--modern-blockquote-font);
+    --blog-code-font: var(--modern-code-font);
+
+    /* Catppuccin dark theme code colors */
+    body.dark {
+      --code-bg-color: #1e1e2e;
+      --code-border-color: #51465b;
+      --code-text-color: #cdd6f4;
+      --inline-code-bg-color: #51465b20;
+    }
+
     --homepage-max-width: 768px;
     --main-max-width: 768px;
     --avatar-size: 60px;
@@ -167,6 +204,11 @@
     <section class="layout-list">
       <div class="post-list">
         
+        <a class="post instant " href="https:&#x2F;&#x2F;agabalevis.com&#x2F;posts&#x2F;madagascar&#x2F;">
+          <span>Madagascar &amp; the 2008 Financial Crisis</span>
+          <span class="date">Apr 11, 2026</span>
+        </a>
+        
         <a class="post instant " href="https:&#x2F;&#x2F;agabalevis.com&#x2F;posts&#x2F;apple-trash-icloud-hostility&#x2F;">
           <span>apple turned Trash into a hostage situation.</span>
           <span class="date">Mar 27, 2026</span>
@@ -190,11 +232,6 @@
         <a class="post instant " href="https:&#x2F;&#x2F;agabalevis.com&#x2F;posts&#x2F;fixing-pylyrics&#x2F;">
           <span>fixing pylyrics.</span>
           <span class="date">Jul 30, 2019</span>
-        </a>
-        
-        <a class="post instant " href="https:&#x2F;&#x2F;agabalevis.com&#x2F;posts&#x2F;welcome-to-my-blog&#x2F;">
-          <span>welcome to my blog.</span>
-          <span class="date">Mar 27, 2019</span>
         </a>
         
       </div>

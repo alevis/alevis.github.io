@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light dark">
+  
+  
+    
+  
+  <meta name="description" content="A forensic reading of the 2005 film as a prophetic document of leveraged collapse, synthetic hedging, deregulatory capture, and the one advisor who was right about everything">
+
+  <title>Madagascar &amp; the 2008 Financial Crisis</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="https://agabalevis.com/img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://agabalevis.com/img/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://agabalevis.com/img/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,200..900;1,200..900&family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Fira+Code:wght@300..700&family=Fira+Mono:wght@400;500;700&family=Gentium+Book+Plus:ital,wght@0,400;0,700;1,400;1,700&family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Merienda:wght@300..900&family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Milonga&family=Moon+Dance&family=Overpass+Mono:wght@300..700&family=PT+Mono&family=Rubik:ital,wght@0,300..900;1,300..900&family=Outfit:wght&display=swap" rel="stylesheet">
+  <style>
+
+  /* light mode colors */
+  body {
+    --primary-color: #5871a2;
+    --primary-pale-color: #5871a233;
+    --primary-decoration-color: #5871a210;
+    --bg-color: #ffffff;
+    --text-color: #2f3030;
+    --text-pale-color: #767676;
+    --text-decoration-color: #a9a9a9;
+    --highlight-mark-color: #5f75b020;
+
+    --callout-note-color: #5871a2;
+    --callout-tip-color: #268556;
+    --callout-important-color: #885fc9;
+    --callout-warning-color: #ab6632;
+    --callout-caution-color: #c64e4e;
+  }
+
+  /* dark mode colors */
+  body.dark {
+    --primary-color: #6f8fd1;
+    --primary-pale-color: #6f8fd166;
+    --primary-decoration-color: #6f8fd112;
+    --bg-color: #1c1c1c;
+    --text-color: #c1c1c1;
+    --text-pale-color: #848484;
+    --text-decoration-color: #5f5f5f;
+    --highlight-mark-color: #8296cb3b;
+
+    --callout-note-color: #6f8fd1;
+    --callout-tip-color: #47976f;
+    --callout-important-color: #9776cd;
+    --callout-warning-color: #ad7a52;
+    --callout-caution-color: #d06161;
+  }
+
+  /* typography */
+  body {
+    --main-font: ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+    --code-font: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+    
+    --default-heading-font: 'Merriweather Sans', sans-serif;
+    --default-body-font: 'Crimson Text', serif;
+    --default-blockquote-font: 'Merienda', cursive;
+    --default-code-font: 'Google Sans Code', monospace;
+
+    --literary-heading-font: 'PT Sans', sans-serif;
+    --literary-body-font: 'Gentium Book Plus', serif;
+    --literary-blockquote-font: 'Moon Dance', cursive;
+    --literary-code-font: 'PT Mono', monospace;
+
+    --modern-heading-font: 'Outfit', sans-serif;
+    --modern-body-font: 'Crimson Pro', serif;
+    --modern-blockquote-font: 'Moon Dance', cursive;
+    --modern-code-font: 'Fira Mono', monospace;
+
+    --classic-heading-font: 'Lato', sans-serif;
+    --classic-body-font: 'Gentium Book Plus', serif;
+    --classic-blockquote-font: 'Moon Dance', cursive;
+    --classic-code-font: 'Overpass Mono', monospace;
+
+    /* Blog post font variables */
+    --heading-font: var(--modern-heading-font);
+    --body-font: var(--modern-body-font);
+    --blockquote-font: var(--modern-blockquote-font);
+    --blog-code-font: var(--modern-code-font);
+
+    /* Catppuccin dark theme code colors */
+    body.dark {
+      --code-bg-color: #1e1e2e;
+      --code-border-color: #51465b;
+      --code-text-color: #cdd6f4;
+      --inline-code-bg-color: #51465b20;
+    }
+
+    --homepage-max-width: 768px;
+    --main-max-width: 768px;
+    --avatar-size: 60px;
+    --font-size: 16px;
+    --line-height: 1.75;
+    --img-border-radius: 0px;
+    --detail-border-radius: 0px;
+    --dark-mode-img-brightness: 0.75;
+    --dark-mode-chart-brightness: 0.75;
+    --inline-code-border-radius: 2px;
+    --inline-code-bg-color: var(--primary-decoration-color);
+    --block-code-border-radius: 0px;
+    --block-code-border-color: var(--primary-color);
+    --detail-border-color: var(--primary-color);
+  }
+
+</style>
+
+  <link rel="stylesheet" href="https://agabalevis.com/main.css">
+  
+
+<link id="hl" rel="stylesheet" type="text/css" href="/giallo-light.css" />
+
+
+
+  
+</head>
+
+<body class="post">
+  
+  <script>
+    const theme = sessionStorage.getItem('theme');
+    const match = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    if ((theme && theme == 'dark') || (!theme && match)) {
+      document.body.classList.add('dark');
+      const hl = document.querySelector('link#hl');
+      if (hl) hl.href = 'https://agabalevis.com/giallo-dark.css';
+    }
+  </script>
+  
+  
+<div id="wrapper">
+  <div id="blank"></div>
+  <aside>
+    
+    
+    <nav>
+      <ul>
+        
+        <li>
+          <a class="h2" href="#i-the-zoo-is-the-pre-crisis-financial-system">I. The zoo is the pre-crisis financial system</a>
+          
+        </li>
+        
+        <li>
+          <a class="h2" href="#ii-marty-s-escape-is-the-subprime-trigger">II. Marty&#x27;s escape is the subprime trigger</a>
+          
+        </li>
+        
+        <li>
+          <a class="h2" href="#iii-the-ship-is-the-shadow-banking-system">III. The ship is the shadow banking system</a>
+          
+        </li>
+        
+        <li>
+          <a class="h2" href="#iv-madagascar-is-the-crisis-itself">IV. Madagascar is the crisis itself</a>
+          
+        </li>
+        
+        <li>
+          <a class="h2" href="#v-king-julien-is-alan-greenspan">V. King Julien is Alan Greenspan</a>
+          
+        </li>
+        
+        <li>
+          <a class="h2" href="#vi-maurice-is-the-analyst-who-was-right-about-everything">VI. Maurice is the analyst who was right about everything</a>
+          
+        </li>
+        
+        <li>
+          <a class="h2" href="#vii-the-foosa-are-the-derivatives-market">VII. The Foosa are the derivatives market</a>
+          
+        </li>
+        
+        <li>
+          <a class="h2" href="#viii-julien-s-plan-is-the-synthetic-cdo-hedge-and-alex-is-lehman-brothers">VIII. Julien&#x27;s plan is the synthetic CDO hedge — and Alex is Lehman Brothers</a>
+          
+        </li>
+        
+        <li>
+          <a class="h2" href="#the-zoo-was-always-a-lie">The zoo was always a lie</a>
+          
+        </li>
+        
+      </ul>
+    </nav>
+    
+    
+    <button id="back-to-top" aria-label="back to top">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-up"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg>
+
+    </button>
+    
+  </aside>
+  <main>
+    
+<header>
+  <nav>
+    <a id="back-link" href="https:&#x2F;&#x2F;agabalevis.com&#x2F;posts">← Back</a>
+  </nav>
+</header>
+
+
+    <div>
+      
+      
+      
+      
+      <div id="copy-cfg" style="display: none;" data-copy-icon="&lt;svg xmlns=&quot;http:&#x2F;&#x2F;www.w3.org&#x2F;2000&#x2F;svg&quot; viewBox=&quot;0 0 24 24&quot; width=&quot;18&quot; height=&quot;18&quot;&gt;&lt;path d=&quot;M6.9998 6V3C6.9998 2.44772 7.44752 2 7.9998 2H19.9998C20.5521 2 20.9998 2.44772 20.9998 3V17C20.9998 17.5523 20.5521 18 19.9998 18H16.9998V20.9991C16.9998 21.5519 16.5499 22 15.993 22H4.00666C3.45059 22 3 21.5554 3 20.9991L3.0026 7.00087C3.0027 6.44811 3.45264 6 4.00942 6H6.9998ZM5.00242 8L5.00019 20H14.9998V8H5.00242ZM8.9998 6H16.9998V16H18.9998V4H8.9998V6Z&quot; fill=&quot;currentColor&quot;&gt;&lt;&#x2F;path&gt;&lt;&#x2F;svg&gt;
+" data-check-icon="&lt;svg xmlns=&quot;http:&#x2F;&#x2F;www.w3.org&#x2F;2000&#x2F;svg&quot; viewBox=&quot;0 0 24 24&quot; width=&quot;18&quot; height=&quot;18&quot;&gt;&lt;path d=&quot;M10.0007 15.1709L19.1931 5.97852L20.6073 7.39273L10.0007 17.9993L3.63672 11.6354L5.05093 10.2212L10.0007 15.1709Z&quot; fill=&quot;currentColor&quot;&gt;&lt;&#x2F;path&gt;&lt;&#x2F;svg&gt;
+"></div>
+      
+      <article class="prose">
+        <h1>Madagascar &amp; the 2008 Financial Crisis</h1>
+        <div id="post-info">
+          <div id="date">
+            <span id="publish">Apr 11, 2026</span>
+            </div>
+
+          
+          <div id="tags">
+            <a class="instant" href="https://agabalevis.com/tags/financial"><span>#</span>financial</a><a class="instant" href="https://agabalevis.com/tags/crisis"><span>#</span>crisis</a><a class="instant" href="https://agabalevis.com/tags/2008"><span>#</span>2008</a><a class="instant" href="https://agabalevis.com/tags/dreamworks"><span>#</span>DreamWorks</a><a class="instant" href="https://agabalevis.com/tags/madagascar"><span>#</span>Madagascar</a>
+          </div>
+          
+        </div>
+
+        
+        
+
+        
+
+        <p><em>What could a children's movie about zoo animals possibly have to do with the 2008 financial crisis?</em></p>
+<hr />
+<blockquote>
+<p>"You are what you eat." – Jean Anthelme Brillat-Savarin</p>
+</blockquote>
+<p><em>And if we are what we <em>consume</em>, then LLMs could be the best personal chefs we've ever had.
+All you have to do, is bring your ingredients. The ingredients inside of you.
+While some of us have an easier time than others of bringing out these <strong>ingredients</strong> , it's the initiative to venture out of a shell, an echo chamber, your walled garden, and take your taste buds or neurons for a spin</em>.</p>
+<p>In September 2008, <a rel="nofollow noreferrer external" href="https://en.wikipedia.org/wiki/Lehman_Brothers">Lehman Brothers</a> filed for the largest <a rel="nofollow noreferrer external" href="https://en.wikipedia.org/wiki/Bankruptcy">bankruptcy</a> in American history. The global <a rel="nofollow noreferrer external" href="https://en.wikipedia.org/wiki/Financial_system">financial system</a> — built on captive assets, suppressed <a rel="nofollow noreferrer external" href="https://en.wikipedia.org/wiki/Volatility_(finance)">volatility</a>, synthetic <a rel="nofollow noreferrer external" href="https://en.wikipedia.org/wiki/Hedge_(finance)">hedges</a>, and the systematic silencing of dissenting analysts — collapsed under the weight of its own contradictions. Three years earlier, DreamWorks Animation had already made Madagascar.</p>
+<h2 id="i-the-zoo-is-the-pre-crisis-financial-system">I. The zoo is the pre-crisis financial system<a class="zola-anchor" href="#i-the-zoo-is-the-pre-crisis-financial-system" aria-label="Anchor link for: i-the-zoo-is-the-pre-crisis-financial-system" style="visibility: hidden;"></a>
+</h2>
+<p>The Central Park Zoo is not a location. It is the United States <a rel="nofollow noreferrer external" href="https://en.wikipedia.org/wiki/United_States_housing_bubble">housing market</a>, circa 2005. Assets are bundled, captive, and optimized for <a rel="nofollow noreferrer external" href="https://en.wikipedia.org/wiki/Yield_(finance)">yield</a>. Volatility has been engineered out of the system — not eliminated, merely invisible. The animals are comfortable. The visitors keep coming. The fund managers, offscreen and unnamed, collect their fees. Everything appears stable because nothing has been tested.</p>
+<blockquote>
+<p>This is the <a rel="nofollow noreferrer external" href="https://en.wikipedia.org/wiki/Mortgage-backed_security">mortgage-backed security</a>. This is the <a rel="nofollow noreferrer external" href="https://en.wikipedia.org/wiki/Tranche_(finance)">AAA-rated tranche</a>. This is the entire apparatus of pre-crisis finance: a closed system in which <a rel="nofollow noreferrer external" href="https://en.wikipedia.org/wiki/Financial_risk">risk</a> has not been removed but merely caged, fed on schedule, and given a crowd-pleasing name.</p>
+</blockquote>
+<h2 id="ii-marty-s-escape-is-the-subprime-trigger">II. Marty's escape is the subprime trigger<a class="zola-anchor" href="#ii-marty-s-escape-is-the-subprime-trigger" aria-label="Anchor link for: ii-marty-s-escape-is-the-subprime-trigger" style="visibility: hidden;"></a>
+</h2>
+<p>Marty the zebra is the <a rel="nofollow noreferrer external" href="https://en.wikipedia.org/wiki/Subprime_mortgage">subprime</a> borrower: not malicious, not sophisticated, simply acting on the genuine belief that the <a rel="nofollow noreferrer external" href="https://en.wikipedia.org/wiki/Open_market">open market</a> holds something better than the cage he was born into. His midnight escape into Grand Central is the 2004 <a rel="nofollow noreferrer external" href="https://en.wikipedia.org/wiki/Adjustable-rate_mortgage">adjustable-rate mortgage</a>. The problem is not Marty. The problem is that the entire portfolio was built on the assumption that Marty would never leave.</p>
+<p>One default triggers <a rel="nofollow noreferrer external" href="https://en.wikipedia.org/wiki/Financial_contagion">contagion</a>. Alex, Gloria, and Melman — none of whom chose exposure to Marty's risk — are <a rel="nofollow noreferrer external" href="https://en.wikipedia.org/wiki/Mark-to_market">repriced</a>, seized, and shipped overseas. This is <a rel="nofollow noreferrer external" href="https://en.wikipedia.org/wiki/Correlation_(finance)">correlation risk</a>: the thing every 2008 model forgot to model. When one asset moves, correlated assets move with it, regardless of their individual fundamentals.</p>
+<h2 id="iii-the-ship-is-the-shadow-banking-system">III. The ship is the shadow banking system<a class="zola-anchor" href="#iii-the-ship-is-the-shadow-banking-system" aria-label="Anchor link for: iii-the-ship-is-the-shadow-banking-system" style="visibility: hidden;"></a>
+</h2>
+<p>The vessel transporting the animals is unregulated, poorly supervised, and immediately hijacked by penguins. The penguins are <a rel="nofollow noreferrer external" href="https://en.wikipedia.org/wiki/Hedge_fund">hedge funds</a>. They arrive with no sentimental attachment to the cargo, identify the inefficiency instantly, execute a <a rel="nofollow noreferrer external" href="https://en.wikipedia.org/wiki/Leverage_(finance)">leveraged</a> takeover with ruthless precision, and redirect the entire operation toward their own ends. They do not explain themselves. They are already gone before anyone understands what happened. In 2008, we called this the <a rel="nofollow noreferrer external" href="https://en.wikipedia.org/wiki/Repo_market">repo market</a>.</p>
+<h2 id="iv-madagascar-is-the-crisis-itself">IV. Madagascar is the crisis itself<a class="zola-anchor" href="#iv-madagascar-is-the-crisis-itself" aria-label="Anchor link for: iv-madagascar-is-the-crisis-itself" style="visibility: hidden;"></a>
+</h2>
+<p>The island is <a rel="nofollow noreferrer external" href="https://en.wikipedia.org/wiki/Mark-to_market">mark-to-market</a>. It is the moment the models meet the actual world and the actual world wins. Infrastructure is absent. There is no <a rel="nofollow noreferrer external" href="https://en.wikipedia.org/wiki/Liquidity_(business)">liquidity</a>. There is no <a rel="nofollow noreferrer external" href="https://en.wikipedia.org/wiki/Federal_Reserve">Federal Reserve</a>. There is only the landscape as it actually is, stripped of the zoo's managed fiction — and it is nothing like the prospectus described.</p>
+<p>The animals' distress upon arrival is the precise emotional register of a <a rel="nofollow noreferrer external" href="https://en.wikipedia.org/wiki/Pension_fund">pension fund</a> manager in October 2008, staring at a screen, realizing that the assets he was told were safe were never safe. They were just caged.</p>
+<h2 id="v-king-julien-is-alan-greenspan">V. King Julien is Alan Greenspan<a class="zola-anchor" href="#v-king-julien-is-alan-greenspan" aria-label="Anchor link for: v-king-julien-is-alan-greenspan" style="visibility: hidden;"></a>
+</h2>
+<p>King Julien XIII is the film's <a rel="nofollow noreferrer external" href="https://en.wikipedia.org/wiki/Alan_Greenspan">Alan Greenspan</a>: a self-appointed authority whose entire <a rel="nofollow noreferrer external" href="https://en.wikipedia.org/wiki/Monetary_policy">monetary policy</a> rests on personal mythology and crowd management rather than institutional legitimacy. He controls the island's resource base through cultural dominance. He keeps the population compliant through spectacle. His <a rel="nofollow noreferrer external" href="https://en.wikipedia.org/wiki/Interest_rate">interest rate</a> is set not by data but by the music he wants to dance to. He has held power so long that the system has forgotten it could function without him.</p>
+<p>Most critically, Julien's response to the Foosa threat — the island's endemic <a rel="nofollow noreferrer external" href="https://en.wikipedia.org/wiki/Systemic_risk">systemic risk</a> — is not to address it structurally but to import an exotic <a rel="nofollow noreferrer external" href="https://en.wikipedia.org/wiki/Financial_instrument">financial instrument</a> and hope it solves the problem. That instrument is Alex. This decision will be discussed shortly. It does not go well.</p>
+<h2 id="vi-maurice-is-the-analyst-who-was-right-about-everything">VI. Maurice is the analyst who was right about everything<a class="zola-anchor" href="#vi-maurice-is-the-analyst-who-was-right-about-everything" aria-label="Anchor link for: vi-maurice-is-the-analyst-who-was-right-about-everything" style="visibility: hidden;"></a>
+</h2>
+<p>Maurice is <a rel="nofollow noreferrer external" href="https://en.wikipedia.org/wiki/Nouriel_Roubini">Nouriel Roubini</a>. He is the internal <a rel="nofollow noreferrer external" href="https://en.wikipedia.org/wiki/Risk_management">risk officer</a> whose memos were never escalated. He is every analyst at <a rel="nofollow noreferrer external" href="https://en.wikipedia.org/wiki/Moody%27s_Investors_Service">Moody's</a> who knew the <a rel="nofollow noreferrer external" href="https://en.wikipedia.org/wiki/Credit_rating_agency">ratings</a> were wrong and filed the objection that disappeared into a drawer. Maurice flags every bad decision Julien makes, understands the risk clearly, and is systematically ignored — not because he lacks access, but because the incentive structure of the court depends on Julien being right.</p>
+<p>He is not wrong once. He is structurally incapable of being heard. Proximity to power without influence over it is its own special category of financial tragedy — one that 2008 produced in abundance.</p>
+<h2 id="vii-the-foosa-are-the-derivatives-market">VII. The Foosa are the derivatives market<a class="zola-anchor" href="#vii-the-foosa-are-the-derivatives-market" aria-label="Anchor link for: vii-the-foosa-are-the-derivatives-market" style="visibility: hidden;"></a>
+</h2>
+<p>The Foosa are the thing everyone on the island knows exists but has built their entire civilization around not confronting directly. They are the unpriced <a rel="nofollow noreferrer external" href="https://en.wikipedia.org/wiki/Tail_risk">tail risk</a>. The lemur economy functions only because the Foosa are, most of the time, kept at the perimeter. Nobody has a real plan for what happens if they breach it. They are the $60 trillion <a rel="nofollow noreferrer external" href="https://en.wikipedia.org/wiki/Credit_default_swap">credit default swap</a> market: technically always present, functionally ignored, and catastrophic the moment the mechanism keeping them at bay fails.</p>
+<h2 id="viii-julien-s-plan-is-the-synthetic-cdo-hedge-and-alex-is-lehman-brothers">VIII. Julien's plan is the synthetic CDO hedge — and Alex is Lehman Brothers<a class="zola-anchor" href="#viii-julien-s-plan-is-the-synthetic-cdo-hedge-and-alex-is-lehman-brothers" aria-label="Anchor link for: viii-julien-s-plan-is-the-synthetic-cdo-hedge-and-alex-is-lehman-brothers" style="visibility: hidden;"></a>
+</h2>
+<p>Here the film reaches its most precise and devastating financial insight. Julien's strategy — deploy Alex as a Foosa deterrent, using one apex risk to suppress another — is the <a rel="nofollow noreferrer external" href="https://en.wikipedia.org/wiki/Collateralized_debt_obligation#Synthetic_CDOs">synthetic CDO</a> hedge. It is an instrument designed to cancel out a known threat by introducing a larger, less understood one. It works, briefly, on paper. The lemurs sleep soundly. The Foosa retreat. The model is validated.</p>
+<p>The fatal flaw is identical to 2008: the hedge itself carries <a rel="nofollow noreferrer external" href="https://en.wikipedia.org/wiki/Counterparty_risk">counterparty risk</a> that was never priced in. Alex is not a stable deterrent. Alex is hungry. He is, as established, a dual-use instrument — simultaneously the portfolio's most valuable asset and its most dangerous liability. The steak hallucination is the <a rel="nofollow noreferrer external" href="https://en.wikipedia.org/wiki/Margin_call">margin call</a>: the moment the gap between modeled value and actual exposure becomes impossible to ignore. The hedge has become the threat. There is no fallback position.</p>
+<p>Julien never modeled this scenario because modeling it would have meant not doing the deal. Maurice told him not to do the deal. The record will show that Maurice told him not to do the deal.</p>
+<p>Alex is Lehman Brothers. Outsized, indispensable, and carrying a risk profile that the entire system had agreed, tacitly, never to examine too closely. When the examination became unavoidable, the consequences were not contained. Gloria and Melman — <a rel="nofollow noreferrer external" href="https://en.wikipedia.org/wiki/Too_big_to_fail">too big to fail</a> — are rescued by the plot. The U.S. government made the same calculation in 2008. For different animals. At greater expense.</p>
+<h2 id="the-zoo-was-always-a-lie">The zoo was always a lie<a class="zola-anchor" href="#the-zoo-was-always-a-lie" aria-label="Anchor link for: the-zoo-was-always-a-lie" style="visibility: hidden;"></a>
+</h2>
+<p>The deepest argument of Madagascar — and of 2008 — is that the stable system was never stable. It was a managed fiction, maintained by institutions with strong incentives to keep the animals fed, the warnings suppressed, the hedges unexamined, and the risk permanently offscreen. When the fiction ended, it ended completely. There was no gradual <a rel="nofollow noreferrer external" href="https://en.wikipedia.org/wiki/Mark-to_market">repricing</a>. There was a boat, an island, a lemur king who governed by dancing, an advisor no one listened to, a <a rel="nofollow noreferrer external" href="https://en.wikipedia.org/wiki/Derivative_(finance)">derivatives market</a> prowling the tree line, and a lion who suddenly remembered what he was.</p>
+<p>Madagascar was released on May 27, 2005. The U.S. housing market peaked in 2006. Lehman fell in 2008. Maurice knew. Nobody asked Maurice.</p>
+
+      </article>
+
+      
+      
+
+      
+      
+    </div>
+
+    
+
+
+<footer>
+  <div class="left">
+    <div class="copyright">
+      © 2026 Levis Agaba
+      
+      <span>|</span>
+      Built with <a href="https://www.getzola.org" rel="noreferrer" target="_blank">zola</a> and <a href="https://github.com/isunjn/serene" rel="noreferrer" target="_blank">serene</a>
+      
+    </div>
+  </div>
+
+  <div class="right">
+    
+    
+      
+    
+    
+    <a id="rss-btn" href="https://agabalevis.com/posts/feed.xml">RSS</a>
+    
+    
+
+    
+    
+    
+    <button id="theme-toggle" aria-label="theme switch">
+      <span class="moon-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18"><path d="M10 7C10 10.866 13.134 14 17 14C18.9584 14 20.729 13.1957 21.9995 11.8995C22 11.933 22 11.9665 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C12.0335 2 12.067 2 12.1005 2.00049C10.8043 3.27098 10 5.04157 10 7ZM4 12C4 16.4183 7.58172 20 12 20C15.0583 20 17.7158 18.2839 19.062 15.7621C18.3945 15.9187 17.7035 16 17 16C12.0294 16 8 11.9706 8 7C8 6.29648 8.08133 5.60547 8.2379 4.938C5.71611 6.28423 4 8.9417 4 12Z" fill="currentColor"></path></svg>
+</span>
+      <span class="sun-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18"><path d="M12 18C8.68629 18 6 15.3137 6 12C6 8.68629 8.68629 6 12 6C15.3137 6 18 8.68629 18 12C18 15.3137 15.3137 18 12 18ZM12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16ZM11 1H13V4H11V1ZM11 20H13V23H11V20ZM3.51472 4.92893L4.92893 3.51472L7.05025 5.63604L5.63604 7.05025L3.51472 4.92893ZM16.9497 18.364L18.364 16.9497L20.4853 19.0711L19.0711 20.4853L16.9497 18.364ZM19.0711 3.51472L20.4853 4.92893L18.364 7.05025L16.9497 5.63604L19.0711 3.51472ZM5.63604 16.9497L7.05025 18.364L4.92893 20.4853L3.51472 19.0711L5.63604 16.9497ZM23 11V13H20V11H23ZM4 11V13H1V11H4Z" fill="currentColor"></path></svg>
+</span>
+    </button>
+    
+  </div>
+</footer>
+
+
+
+
+<dialog id="rss-mask">
+  <div>
+    <a href="https:&#x2F;&#x2F;agabalevis.com&#x2F;posts&#x2F;feed.xml">https:&#x2F;&#x2F;agabalevis.com&#x2F;posts&#x2F;feed.xml</a>
+    
+    
+    <button autofocus aria-label="copy" data-link="https:&#x2F;&#x2F;agabalevis.com&#x2F;posts&#x2F;feed.xml" data-copy-icon="&lt;svg xmlns=&quot;http:&#x2F;&#x2F;www.w3.org&#x2F;2000&#x2F;svg&quot; viewBox=&quot;0 0 24 24&quot; width=&quot;18&quot; height=&quot;18&quot;&gt;&lt;path d=&quot;M6.9998 6V3C6.9998 2.44772 7.44752 2 7.9998 2H19.9998C20.5521 2 20.9998 2.44772 20.9998 3V17C20.9998 17.5523 20.5521 18 19.9998 18H16.9998V20.9991C16.9998 21.5519 16.5499 22 15.993 22H4.00666C3.45059 22 3 21.5554 3 20.9991L3.0026 7.00087C3.0027 6.44811 3.45264 6 4.00942 6H6.9998ZM5.00242 8L5.00019 20H14.9998V8H5.00242ZM8.9998 6H16.9998V16H18.9998V4H8.9998V6Z&quot; fill=&quot;currentColor&quot;&gt;&lt;&#x2F;path&gt;&lt;&#x2F;svg&gt;
+" data-check-icon="&lt;svg xmlns=&quot;http:&#x2F;&#x2F;www.w3.org&#x2F;2000&#x2F;svg&quot; viewBox=&quot;0 0 24 24&quot; width=&quot;18&quot; height=&quot;18&quot;&gt;&lt;path d=&quot;M10.0007 15.1709L19.1931 5.97852L20.6073 7.39273L10.0007 17.9993L3.63672 11.6354L5.05093 10.2212L10.0007 15.1709Z&quot; fill=&quot;currentColor&quot;&gt;&lt;&#x2F;path&gt;&lt;&#x2F;svg&gt;
+" >
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18"><path d="M6.9998 6V3C6.9998 2.44772 7.44752 2 7.9998 2H19.9998C20.5521 2 20.9998 2.44772 20.9998 3V17C20.9998 17.5523 20.5521 18 19.9998 18H16.9998V20.9991C16.9998 21.5519 16.5499 22 15.993 22H4.00666C3.45059 22 3 21.5554 3 20.9991L3.0026 7.00087C3.0027 6.44811 3.45264 6 4.00942 6H6.9998ZM5.00242 8L5.00019 20H14.9998V8H5.00242ZM8.9998 6H16.9998V16H18.9998V4H8.9998V6Z" fill="currentColor"></path></svg>
+
+    </button>
+  </div>
+</dialog>
+
+
+
+  </main>
+</div>
+
+  
+<script src="/js/lightense.min.js"></script>
+
+
+  <script src="https://agabalevis.com/js/main.js"></script>
+</body>
+
+</html>

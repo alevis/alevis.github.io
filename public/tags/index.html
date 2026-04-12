@@ -15,7 +15,9 @@ en">
   <link rel="icon" type="image/png" sizes="32x32" href="https://agabalevis.com/img/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="https://agabalevis.com/img/favicon-16x16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="https://agabalevis.com/img/apple-touch-icon.png">
-  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,200..900;1,200..900&family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Fira+Code:wght@300..700&family=Fira+Mono:wght@400;500;700&family=Gentium+Book+Plus:ital,wght@0,400;0,700;1,400;1,700&family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Merienda:wght@300..900&family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Milonga&family=Moon+Dance&family=Overpass+Mono:wght@300..700&family=PT+Mono&family=Rubik:ital,wght@0,300..900;1,300..900&family=Outfit:wght&display=swap" rel="stylesheet">
   <style>
 
   /* light mode colors */
@@ -58,6 +60,41 @@ en">
   body {
     --main-font: ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
     --code-font: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+    
+    --default-heading-font: 'Merriweather Sans', sans-serif;
+    --default-body-font: 'Crimson Text', serif;
+    --default-blockquote-font: 'Merienda', cursive;
+    --default-code-font: 'Google Sans Code', monospace;
+
+    --literary-heading-font: 'PT Sans', sans-serif;
+    --literary-body-font: 'Gentium Book Plus', serif;
+    --literary-blockquote-font: 'Moon Dance', cursive;
+    --literary-code-font: 'PT Mono', monospace;
+
+    --modern-heading-font: 'Outfit', sans-serif;
+    --modern-body-font: 'Crimson Pro', serif;
+    --modern-blockquote-font: 'Moon Dance', cursive;
+    --modern-code-font: 'Fira Mono', monospace;
+
+    --classic-heading-font: 'Lato', sans-serif;
+    --classic-body-font: 'Gentium Book Plus', serif;
+    --classic-blockquote-font: 'Moon Dance', cursive;
+    --classic-code-font: 'Overpass Mono', monospace;
+
+    /* Blog post font variables */
+    --heading-font: var(--modern-heading-font);
+    --body-font: var(--modern-body-font);
+    --blockquote-font: var(--modern-blockquote-font);
+    --blog-code-font: var(--modern-code-font);
+
+    /* Catppuccin dark theme code colors */
+    body.dark {
+      --code-bg-color: #1e1e2e;
+      --code-border-color: #51465b;
+      --code-text-color: #cdd6f4;
+      --inline-code-bg-color: #51465b20;
+    }
+
     --homepage-max-width: 768px;
     --main-max-width: 768px;
     --avatar-size: 60px;
@@ -105,18 +142,23 @@ en">
   <main>
     <h1 class="title">Tags</h1>
     <div class="tags">
+      <a class="instant" href="https:&#x2F;&#x2F;agabalevis.com&#x2F;tags&#x2F;2008&#x2F;"># 2008</a>
       <a class="instant" href="https:&#x2F;&#x2F;agabalevis.com&#x2F;tags&#x2F;apple&#x2F;"># apple</a>
       <a class="instant" href="https:&#x2F;&#x2F;agabalevis.com&#x2F;tags&#x2F;blog&#x2F;"># blog</a>
       <a class="instant" href="https:&#x2F;&#x2F;agabalevis.com&#x2F;tags&#x2F;bug&#x2F;"># bug</a>
       <a class="instant" href="https:&#x2F;&#x2F;agabalevis.com&#x2F;tags&#x2F;comprehensions&#x2F;"># comprehensions</a>
+      <a class="instant" href="https:&#x2F;&#x2F;agabalevis.com&#x2F;tags&#x2F;crisis&#x2F;"># crisis</a>
       <a class="instant" href="https:&#x2F;&#x2F;agabalevis.com&#x2F;tags&#x2F;cve-2020-14001&#x2F;"># cve-2020-14001</a>
+      <a class="instant" href="https:&#x2F;&#x2F;agabalevis.com&#x2F;tags&#x2F;dreamworks&#x2F;"># dreamworks</a>
       <a class="instant" href="https:&#x2F;&#x2F;agabalevis.com&#x2F;tags&#x2F;error&#x2F;"># error</a>
       <a class="instant" href="https:&#x2F;&#x2F;agabalevis.com&#x2F;tags&#x2F;file-provider&#x2F;"># file-provider</a>
+      <a class="instant" href="https:&#x2F;&#x2F;agabalevis.com&#x2F;tags&#x2F;financial&#x2F;"># financial</a>
       <a class="instant" href="https:&#x2F;&#x2F;agabalevis.com&#x2F;tags&#x2F;finder&#x2F;"># finder</a>
       <a class="instant" href="https:&#x2F;&#x2F;agabalevis.com&#x2F;tags&#x2F;flask&#x2F;"># flask</a>
       <a class="instant" href="https:&#x2F;&#x2F;agabalevis.com&#x2F;tags&#x2F;icloud&#x2F;"># icloud</a>
       <a class="instant" href="https:&#x2F;&#x2F;agabalevis.com&#x2F;tags&#x2F;kramdown&#x2F;"># kramdown</a>
       <a class="instant" href="https:&#x2F;&#x2F;agabalevis.com&#x2F;tags&#x2F;macos&#x2F;"># macos</a>
+      <a class="instant" href="https:&#x2F;&#x2F;agabalevis.com&#x2F;tags&#x2F;madagascar&#x2F;"># madagascar</a>
       <a class="instant" href="https:&#x2F;&#x2F;agabalevis.com&#x2F;tags&#x2F;package&#x2F;"># package</a>
       <a class="instant" href="https:&#x2F;&#x2F;agabalevis.com&#x2F;tags&#x2F;python&#x2F;"># python</a>
       <a class="instant" href="https:&#x2F;&#x2F;agabalevis.com&#x2F;tags&#x2F;reflections&#x2F;"># reflections</a>

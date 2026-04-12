@@ -19,6 +19,12 @@
         <loc>https://agabalevis.com/categories/comprehensions/</loc>
     </url>
     <url>
+        <loc>https://agabalevis.com/categories/film/</loc>
+    </url>
+    <url>
+        <loc>https://agabalevis.com/categories/finance/</loc>
+    </url>
+    <url>
         <loc>https://agabalevis.com/categories/icloud/</loc>
     </url>
     <url>
@@ -73,6 +79,10 @@
         <lastmod>2020-08-16</lastmod>
     </url>
     <url>
+        <loc>https://agabalevis.com/posts/madagascar/</loc>
+        <lastmod>2026-04-11</lastmod>
+    </url>
+    <url>
         <loc>https://agabalevis.com/posts/python-comprehensions/</loc>
         <lastmod>2025-12-03T13:01:00</lastmod>
     </url>
@@ -88,6 +98,9 @@
         <loc>https://agabalevis.com/tags/</loc>
     </url>
     <url>
+        <loc>https://agabalevis.com/tags/2008/</loc>
+    </url>
+    <url>
         <loc>https://agabalevis.com/tags/apple/</loc>
     </url>
     <url>
@@ -100,13 +113,22 @@
         <loc>https://agabalevis.com/tags/comprehensions/</loc>
     </url>
     <url>
+        <loc>https://agabalevis.com/tags/crisis/</loc>
+    </url>
+    <url>
         <loc>https://agabalevis.com/tags/cve-2020-14001/</loc>
+    </url>
+    <url>
+        <loc>https://agabalevis.com/tags/dreamworks/</loc>
     </url>
     <url>
         <loc>https://agabalevis.com/tags/error/</loc>
     </url>
     <url>
         <loc>https://agabalevis.com/tags/file-provider/</loc>
+    </url>
+    <url>
+        <loc>https://agabalevis.com/tags/financial/</loc>
     </url>
     <url>
         <loc>https://agabalevis.com/tags/finder/</loc>
@@ -122,6 +144,9 @@
     </url>
     <url>
         <loc>https://agabalevis.com/tags/macos/</loc>
+    </url>
+    <url>
+        <loc>https://agabalevis.com/tags/madagascar/</loc>
     </url>
     <url>
         <loc>https://agabalevis.com/tags/package/</loc>

@@ -7,7 +7,7 @@ insert_anchor_links = "none"
 [extra]
 lang = "en"
 title = "About"
-subtitle = "What software development has taught me."
+subtitle = "Early experiences and lessons learned."
 math = false
 mermaid = false
 copy = false
